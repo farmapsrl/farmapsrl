@@ -321,24 +321,24 @@
   }
   ,
 {
-  "slug": "farmacia-nuova",
+  "slug": "farmacia di nibbiano",
   "tipo": "farmacia",
-  "nome": "Farmacia Nuova",
-  "citta": "Città",
-  "provincia": "Provincia",
-  "indirizzo": "Farmacia Nuova, Via Esempio 1, 00000 Città",
-  "telefono": "+39 0000 000000",
-  "lat": 45.0,
-"lng": 9.0,
+  "nome": "Farmacia Di Nibbiano",
+  "citta": "Nibbiano (PC)",
+  "provincia": "Piacenza",
+  "indirizzo": "Farmacia Di Nibbiano, Piazza Martiti della Libertà 6, 29031 Nibbiano",
+  "telefono": "+39 0523990427",
+  "lat": 44.90472911684365,
+"lng": 9.329435733500011,
 
-  "orarioApertura": { "lun_sab": ["09:00", "13:00", "15:00", "19:00"], "dom": null },
-  "orari": [["Lun–Sab", "9:00–13:00 / 15:00–19:00"], ["Domenica", "Chiusa"]],
+  "orarioApertura": { "lun_sab": ["08:30", "12:30", "15:30", "19:30"], "dom": ["8:30", "12:30"] },
+  "orari": [["Lun–Sab", "8:30–12:30 / 15:30–19:30"], ["Domenica", "8:30-12:30"]],
   "distributoreH24": false,
   "social": { "facebook": "", "instagram": "" },
   "servizi": [
-    { "nome": "Misurazione Pressione Arteriosa" },
-    { "nome": "Glicemia" },
-    { "nome": "Servizi CUP" }
+    { "nome": "Ritiro referti in farmacia" },
+    { "nome": "Screening colon retto" },
+    { "nome": "Spid e FSE" }
   ]
 }
 ]
