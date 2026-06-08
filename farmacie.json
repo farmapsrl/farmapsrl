@@ -1,0 +1,344 @@
+[
+  {
+    "slug": "farmacia-giardino",
+    "tipo": "farmacia",
+    "nome": "Farmacia Giardino",
+    "citta": "Pavia",
+    "provincia": "Pavia",
+    "regione": "Lombardia",
+    "indirizzo": "Farmacia Giardino, Viale Ludovico il Moro 43, 27100 Pavia",
+    "telefono": "+39 0382 468934",
+    "lat": 45.1949149,
+    "lng": 9.1589827,
+    "social": {
+      "instagram": "https://www.instagram.com/farmaciagiardinopavia?igsh=OGRkcGl6eDJ3M2Rw"
+    },
+    "distributoreH24": true,
+    "orarioApertura": { "lun_dom": ["08:00", "20:00"] },
+    "orari": [["Lun–Dom", "8:00–20:00"]],
+    "notaOrari": "Aperta 365 giorni all'anno.",
+    "cosmetici": [
+      { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
+      { "brand": "Ceramol", "logo": "/cosmetici/ceramol.png" },
+      { "brand": "Dolomia", "logo": "/cosmetici/dolomia.png" },
+      { "brand": "Narika", "logo": "/cosmetici/narika.png" },
+      { "brand": "La Roche-Posay", "logo": "/cosmetici/la-roche-posay.png" },
+      { "brand": "Vea", "logo": "/cosmetici/vea.png" }
+    ],
+    "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
+      { "nome": "Misurazione Peso Corporeo" },
+      { "nome": "Holter Cardiaco" },
+      { "nome": "Holter Pressorio" },
+      { "nome": "Glicemia" },
+      { "nome": "Tampone Streptococco e Covid" },
+      { "nome": "Recaller Test" },
+      { "nome": "Foratura Lobi e Naso" },
+      { "nome": "Noleggio Ausili e Dispositivi Medici", "dettagli": ["Stampelle", "Bombole di ossigeno", "Tiralatte"] },
+      { "nome": "Deblistering Farmaci" },
+      { "nome": "Servizi CUP" },
+      { "nome": "Screening Colon-Retto" },
+      { "nome": "Consegna a Domicilio" }
+    ]
+  },
+  {
+    "slug": "farmacia-santa-teresa",
+    "tipo": "farmacia",
+    "nome": "Farmacia Santa Teresa",
+    "citta": "Pavia",
+    "provincia": "Pavia",
+    "regione": "Lombardia",
+    "indirizzo": "Farmacia Santa Teresa, Viale Partigiani 16, 27100 Pavia",
+    "telefono": "+39 0382 460235",
+    "lat": 45.18177855239253,
+    "lng": 9.168821769024834,
+    "social": {
+      "instagram": "https://www.instagram.com/farmaciasantateresapavia?igsh=bDB6NWpoeG12Nnkz"
+    },
+    "cosmetici": [
+      { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
+      { "brand": "Ceramol", "logo": "/cosmetici/ceramol.png" },
+      { "brand": "Narika", "logo": "/cosmetici/narika.png" },
+      { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" }
+    ],
+    "orarioApertura": { "lun_sab": ["08:00", "13:00", "14:30", "19:30"], "dom": null },
+    "orari": [["Lun–Sab", "8:00–13:00 / 14:30–19:30"], ["Domenica", "Chiusa"]],
+    "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
+      { "nome": "Misurazione Peso Corporeo" },
+      { "nome": "Holter Cardiaco" },
+      { "nome": "Holter Pressorio" },
+      { "nome": "ECG" },
+      { "nome": "Glicemia" },
+      { "nome": "Profilo Lipidico Completo" },
+      { "nome": "Emoglobina Glicata" },
+      { "nome": "Tampone Streptococco e Covid" },
+      { "nome": "Breath Test Helicobacter Pylori" },
+      { "nome": "Vaccinazione Antinfluenzale" },
+      { "nome": "Vaccinazione Anti-Pneumococcica" },
+      { "nome": "Foratura Lobi e Naso" },
+      { "nome": "Noleggio Ausili e Dispositivi Medici", "dettagli": ["Stampelle", "Bombole di ossigeno"] },
+      { "nome": "Deblistering Farmaci" },
+      { "nome": "Servizi CUP" },
+      { "nome": "Screening Colon-Retto" },
+      { "nome": "Consegna a Domicilio" }
+    ]
+  },
+  {
+    "slug": "farmacia-san-giorgio",
+    "tipo": "farmacia",
+    "nome": "Farmacia San Giorgio",
+    "citta": "Fizzonasco (MI)",
+    "provincia": "Milano",
+    "regione": "Lombardia",
+    "indirizzo": "Farmacia San Giorgio, Via Liguria 14, 20072 Fizzonasco MI",
+    "telefono": "+39 02 90428868",
+    "lat": 45.37511710331307,
+    "lng": 9.168798554773916,
+    "cosmetici": [
+      { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
+      { "brand": "Ceramol", "logo": "/cosmetici/ceramol.png" },
+      { "brand": "Lovren", "logo": "/cosmetici/lovren.png", "scale": 1.4 },
+      { "brand": "La Roche-Posay", "logo": "/cosmetici/laroche-posay.png" },
+      { "brand": "Vea", "logo": "/cosmetici/vea.png" }
+    ],
+    "orarioApertura": { "lun_ven": ["09:00", "19:00"], "sab": ["09:00", "13:00"], "dom": null },
+    "orari": [["Lun–Ven", "9:00–19:00"], ["Sabato", "9:00–13:00"], ["Domenica", "Chiusa"]],
+    "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
+      { "nome": "Misurazione Peso Corporeo" },
+      { "nome": "Holter Pressorio" },
+      { "nome": "Glicemia" },
+      { "nome": "Tamponi Streptococco e Covid" },
+      { "nome": "Vaccinazione Antinfluenzale" },
+      { "nome": "Foratura Lobi" },
+      { "nome": "Deblistering Farmaci" },
+      { "nome": "Servizi CUP" },
+      { "nome": "Screening Colon-Retto" }
+    ]
+  },
+  {
+    "slug": "farmacia-amica",
+    "tipo": "farmacia",
+    "nome": "Farmacia Amica",
+    "citta": "Belgioioso (PV)",
+    "provincia": "Pavia",
+    "regione": "Lombardia",
+    "indirizzo": "Farmacia Amica, Via XX Settembre 34, 27011 Belgioioso PV",
+    "telefono": "+39 0382 970602",
+    "lat": 45.15938772004701,
+    "lng": 9.315913481745584,
+    "social": {
+      "instagram": "https://www.instagram.com/farmaciamicabelgioioso?igsh=NHJ0bGRkYmdkdzlp"
+    },
+    "distributoreH24": true,
+    "cosmetici": [
+      { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
+      { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" },
+      { "brand": "Narika", "logo": "/cosmetici/narika.png" },
+      { "brand": "Dolomia", "logo": "/cosmetici/dolomia.png" }
+    ],
+    "orarioApertura": { "lun_sab": ["08:30", "12:30", "15:00", "19:30"], "dom": null },
+    "orari": [["Lun–Sab", "8:30–12:30 / 15:00–19:30"], ["Domenica", "Chiusa"]],
+    "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
+      { "nome": "Misurazione Peso Corporeo" },
+      { "nome": "Holter Cardiaco" },
+      { "nome": "Holter Pressorio" },
+      { "nome": "ECG" },
+      { "nome": "Glicemia" },
+      { "nome": "Profilo Lipidico Completo" },
+      { "nome": "Tamponi Streptococco e Covid" },
+      { "nome": "Foratura Lobi" },
+      { "nome": "Noleggio Ausili e Dispositivi Medici" },
+      { "nome": "Deblistering Farmaci" },
+      { "nome": "Servizi CUP" },
+      { "nome": "Screening Colon-Retto" }
+    ]
+  },
+  {
+    "slug": "farmacia-piu",
+    "tipo": "farmacia",
+    "nome": "Farmacia Più",
+    "citta": "Piacenza",
+    "provincia": "Piacenza",
+    "regione": "Emilia-Romagna",
+    "indirizzo": "Farmacia Più, Via Cavour 37, 29121 Piacenza",
+    "telefono": "+39 0523 321662",
+    "lat": 45.05375998515989,
+    "lng": 9.695208943122688,
+    "social": {
+      "instagram": "https://www.instagram.com/farmaciapiusanlazzaro?igsh=bnd3bDdiOXpjNG94"
+    },
+    "distributoreH24": true,
+    "cosmetici": [
+      { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" },
+      { "brand": "Narika", "logo": "/cosmetici/narika.png" },
+      { "brand": "Caudalie", "logo": "/cosmetici/caudalie.png" },
+      { "brand": "La Roche-Posay", "logo": "/cosmetici/laroche-posay.png" },
+      { "brand": "Farmacisti per la Ricerca", "logo": "/cosmetici/farmacisti-per-la-ricerca.png" }
+    ],
+    "orarioApertura": { "lun_sab": ["08:00", "19:30"], "dom": ["09:00", "13:00", "15:30", "19:30"] },
+    "orari": [["Lun–Sab", "8:00–19:30"], ["Domenica", "9:00–13:00 / 15:30–19:30"]],
+    "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
+      { "nome": "Misurazione Saturazione Ossigeno" },
+      { "nome": "Misurazione Peso Corporeo" },
+      { "nome": "Holter Cardiaco" },
+      { "nome": "Holter Pressorio" },
+      { "nome": "ECG" },
+      { "nome": "Glicemia" },
+      { "nome": "Tamponi Streptococco e Covid" },
+      { "nome": "Vaccinazione Antinfluenzale" },
+      { "nome": "Recaller Test" },
+      { "nome": "Noleggio Ausili e Dispositivi Medici", "dettagli": ["Stampelle", "Tiralatte", "Aerosol", "Bilancia pesa bambini", "Magnetoterapia"] },
+      { "nome": "Deblistering Farmaci" },
+      { "nome": "Servizi CUP" },
+      { "nome": "Attivazione SPID" },
+      { "nome": "Pagamento Ticket" },
+      { "nome": "Ritiro Referti esami di laboratorio" },
+      { "nome": "Consegna a Domicilio" },
+      { "nome": "Screening Colon-Retto" }
+    ]
+  },
+  {
+    "slug": "farmacia-san-lazzaro",
+    "tipo": "farmacia",
+    "nome": "Farmacia San Lazzaro",
+    "citta": "Piacenza",
+    "provincia": "Piacenza",
+    "regione": "Emilia-Romagna",
+    "indirizzo": "Farmacia San Lazzaro, Via Emilia Parmense 40, 29122 Piacenza",
+    "telefono": "+39 0523 614842",
+    "lat": 45.03851170309954,
+    "social": {
+      "instagram": "https://www.instagram.com/farmaciapiusanlazzaro?igsh=bnd3bDdiOXpjNG94"
+    },
+    "lng": 9.721599541267311,
+    "distributoreH24": true,
+    "cosmetici": [
+      { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" },
+      { "brand": "Narika", "logo": "/cosmetici/narika.png" },
+      { "brand": "Caudalie", "logo": "/cosmetici/caudalie.png" },
+      { "brand": "La Roche-Posay", "logo": "/cosmetici/laroche-posay.png" },
+      { "brand": "Farmacisti per la Ricerca", "logo": "/cosmetici/farmacisti-per-la-ricerca.png" }
+    ],
+    "orarioApertura": { "lun_sab": ["08:00", "19:30"], "dom": null },
+    "orari": [["Lun–Sab", "8:00–19:30"], ["Domenica", "Chiusa"]],
+    "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
+      { "nome": "Misurazione Saturazione Ossigeno" },
+      { "nome": "Misurazione Peso Corporeo" },
+      { "nome": "Holter Cardiaco" },
+      { "nome": "Holter Pressorio" },
+      { "nome": "ECG" },
+      { "nome": "Glicemia" },
+      { "nome": "Profilo Lipidico Completo" },
+      { "nome": "Emoglobina Glicata" },
+      { "nome": "Dosaggio Vitamina D" },
+      { "nome": "Tamponi Streptococco e Covid" },
+      { "nome": "Vaccinazione Antinfluenzale" },
+      { "nome": "Recaller Test" },
+      { "nome": "Laboratorio Preparazione Galenica" },
+      { "nome": "Noleggio Ausili e Dispositivi Medici", "dettagli": ["Stampelle", "Tiralatte", "Aerosol", "Bilancia pesa bambini", "Magnetoterapia"] },
+      { "nome": "Deblistering Farmaci" },
+      { "nome": "Servizi CUP" },
+      { "nome": "Attivazione SPID" },
+      { "nome": "Pagamento Ticket" },
+      { "nome": "Ritiro Referti esami di laboratorio" },
+      { "nome": "Consegna a Domicilio" },
+      { "nome": "Screening Colon-Retto" }
+    ]
+  },
+  {
+    "slug": "farmacia-emilia",
+    "tipo": "farmacia",
+    "nome": "Farmacia Emilia",
+    "citta": "Fontana Fredda (PC)",
+    "provincia": "Piacenza",
+    "regione": "Emilia-Romagna",
+    "indirizzo": "Farmacia Emilia, SS9 Via Emilia 30, 29010 Fontana Fredda PC",
+    "telefono": "+39 0523 691752",
+    "lat": 44.95597760874076,
+    "lng": 9.864567497081723,
+    "social": {
+      "instagram": "https://www.instagram.com/farmaciaemilia_fontanafreddapc?igsh=MWhscjkzb3Rva2h5Ng=="
+    },
+    "distributoreH24": true,
+    "cosmetici": [
+      { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
+      { "brand": "Narika", "logo": "/cosmetici/narika.png" },
+      { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" },
+      { "brand": "La Roche-Posay", "logo": "/cosmetici/laroche-posay.png" }
+    ],
+    "orarioApertura": { "lun_sab": ["09:00", "13:00", "15:00", "19:00"], "dom": null },
+    "orari": [["Lun–Sab", "9:00–13:00 / 15:00–19:00"], ["Domenica", "Chiusa"]],
+    "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
+      { "nome": "Misurazione Peso Corporeo" },
+      { "nome": "Holter Cardiaco" },
+      { "nome": "Holter Pressorio" },
+      { "nome": "ECG" },
+      { "nome": "Glicemia" },
+      { "nome": "Profilo Lipidico Completo" },
+      { "nome": "Tamponi Streptococco e Covid" },
+      { "nome": "Recaller Test" },
+      { "nome": "Foratura Lobi e Naso"},
+      { "nome": "Servizi CUP" },
+      { "nome": "Attivazione SPID" },
+      { "nome": "Pagamento Ticket" },
+      { "nome": "Ritiro Referti" },
+      { "nome": "Consegna a Domicilio" },
+      { "nome": "Noleggio Ausili e Dispositivi Medici" },
+      { "nome": "Deblistering Farmaci" },
+      { "nome": "Screening Colon-Retto" }
+    ]
+  },
+  {
+    "slug": "parafarmacia-pavia",
+    "tipo": "parafarmacia",
+    "nome": "Farmastazione",
+    "citta": "Pavia",
+    "provincia": "Pavia",
+    "regione": "Lombardia",
+    "indirizzo": "Farmastazione, P.le della Stazione 19, 27100 Pavia",
+    "telefono": "+39 0382 25460",
+    "lat": 45.18881265346124,
+    "lng": 9.144692268256135,
+    "social": {
+      "instagram": "https://www.instagram.com/farmastazione.pavia?igsh=MXZtNzZuZzgxcTZ2ag=="
+    },
+    "cosmetici": [
+      { "brand": "Eucerin", "logo": "/cosmetici/eucerin.png" },
+      { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" },
+      { "brand": "CeraVè", "logo": "/cosmetici/cerave.png" },
+      { "brand": "Lovren", "logo": "/cosmetici/lovren.png", "scale": 1.4 },
+      { "brand": "La Roche-Posay", "logo": "/cosmetici/laroche-posay.png" }
+    ],
+    "orarioApertura": { "lun_ven": ["07:00", "13:00", "14:00", "19:30"], "sab": ["07:30", "12:30"], "dom": null },
+    "orari": [["Lun–Ven", "7:00–13:00 / 14:00–19:30"], ["Sabato", "7:30–12:30"], ["Domenica", "Chiusa"]],
+    "servizi": []
+  }
+  ,
+{
+  "slug": "farmacia-nuova",
+  "tipo": "farmacia",
+  "nome": "Farmacia Nuova",
+  "citta": "Città",
+  "provincia": "Provincia",
+  "indirizzo": "Farmacia Nuova, Via Esempio 1, 00000 Città",
+  "telefono": "+39 0000 000000",
+  "lat": 45.0,
+"lng": 9.0,
+
+  "orarioApertura": { "lun_sab": ["09:00", "13:00", "15:00", "19:00"], "dom": null },
+  "orari": [["Lun–Sab", "9:00–13:00 / 15:00–19:00"], ["Domenica", "Chiusa"]],
+  "distributoreH24": false,
+  "social": { "facebook": "", "instagram": "" },
+  "servizi": [
+    { "nome": "Misurazione Pressione Arteriosa" },
+    { "nome": "Glicemia" },
+    { "nome": "Servizi CUP" }
+  ]
+}
+]
