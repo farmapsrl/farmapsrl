@@ -11,22 +11,16 @@ function isAperta(farmacia) {
   const minuti = ora.getHours() * 60 + ora.getMinutes();
   const oa = farmacia.orarioApertura;
   if (!oa) return false;
-
   let schedule = null;
   if (giorno === 0) schedule = oa.dom || oa.lun_dom || null;
   else if (giorno === 6) schedule = oa.sab || oa.lun_sab || oa.lun_dom || null;
   else schedule = oa.lun_ven || oa.lun_sab || oa.lun_dom || null;
-
   if (!schedule) return false;
-
   const toMin = (t) => {
     const parti = t.split(":");
     return parseInt(parti[0]) * 60 + parseInt(parti[1]);
   };
-
-  if (schedule.length === 2) {
-    return minuti >= toMin(schedule[0]) && minuti < toMin(schedule[1]);
-  }
+  if (schedule.length === 2) return minuti >= toMin(schedule[0]) && minuti < toMin(schedule[1]);
   if (schedule.length === 4) {
     return (minuti >= toMin(schedule[0]) && minuti < toMin(schedule[1])) ||
            (minuti >= toMin(schedule[2]) && minuti < toMin(schedule[3]));
@@ -37,7 +31,6 @@ function isAperta(farmacia) {
 export default function Home() {
   const [cerca, setCerca] = useState("");
   const [mounted, setMounted] = useState(false);
-
   useEffect(() => { setMounted(true); }, []);
   if (!mounted) return null;
 
@@ -53,7 +46,7 @@ export default function Home() {
 
   const farmacieLista = filtra("farmacia");
   const parafarmacieLista = filtra("parafarmacia");
-const dispensariLista = filtra("dispensario");
+  const dispensariLista = filtra("dispensario");
 
   return (
     <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
@@ -122,8 +115,8 @@ const dispensariLista = filtra("dispensario");
 
           {parafarmacieLista.length > 0 && (
             <>
-              <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20 }}>La nostra parafarmacia</div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16 }}>
+              <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20, marginTop: 16 }}>La nostra parafarmacia</div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
                 {parafarmacieLista.map((f) => (
                   <div
                     key={f.slug}
@@ -161,44 +154,42 @@ const dispensariLista = filtra("dispensario");
             </>
           )}
 
+          {dispensariLista.length > 0 && (
+            <>
+              <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20, marginTop: 16 }}>Il nostro dispensario</div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
+                {dispensariLista.map((f) => {
+                  const farmaciaRef = farmacie.find((x) => x.slug === f.farmaciaDiRiferimento);
+                  return (
+                    <div key={f.slug} style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
+                      <div style={{ marginBottom: 14 }}>
+                        <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
+                        <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
+                      </div>
+                      <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
+                        <span>📍</span><span>{f.indirizzo}</span>
+                      </div>
+                      <div style={{ fontSize: 13, color: "#555", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+                        <span>🕐</span>
+                        <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
+                      </div>
+                      {farmaciaRef && (
+                        <div style={{ fontSize: 12, color: "#888", borderTop: "1px solid #f0f0f0", paddingTop: 12 }}>
+                          Gestito da{" "}
+                          <a href={"/" + farmaciaRef.slug} style={{ color: "#3B6D11", textDecoration: "none", fontWeight: 500 }}>
+                            {farmaciaRef.nome}
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          )}
+
         </div>
       </div>
-
-      {dispensariLista.length > 0 && (
-        <div style={{ padding: "0 2rem 2.5rem" }}>
-          <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-            <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20, marginTop: 48 }}>Il nostro dispensario</div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
-              {dispensariLista.map((f) => {
-                const farmaciaRef = farmacie.find((x) => x.slug === f.farmaciaDiRiferimento);
-                return (
-                  <div key={f.slug} style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
-                      <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
-                    </div>
-                    <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                      <span>📍</span><span>{f.indirizzo}</span>
-                    </div>
-                    <div style={{ fontSize: 13, color: "#555", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
-                      <span>🕐</span>
-                      <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
-                    </div>
-                    {farmaciaRef && (
-                      <div style={{ fontSize: 12, color: "#888", borderTop: "1px solid #f0f0f0", paddingTop: 12 }}>
-                        Gestito da{" "}
-                        <a href={"/" + farmaciaRef.slug} style={{ color: "#3B6D11", textDecoration: "none", fontWeight: 500 }}>
-                          {farmaciaRef.nome}
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      )}
 
       <div style={{ padding: "0 2rem 2.5rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
