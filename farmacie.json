@@ -321,13 +321,13 @@
   }
   ,
 {
-  "slug": "farmacia di nibbiano",
+  "slug": "farmacia-di-nibbiano",
   "tipo": "farmacia",
   "nome": "Farmacia Di Nibbiano",
   "citta": "Nibbiano (PC)",
   "provincia": "Piacenza",
   "indirizzo": "Farmacia Di Nibbiano, Piazza Martiti della Libertà 6, 29031 Nibbiano",
-  "telefono": "+39 0523990427",
+  "telefono": "+39 0523 990427",
   "lat": 44.90472911684365,
 "lng": 9.329435733500011,
 
@@ -340,5 +340,23 @@
     { "nome": "Screening colon retto" },
     { "nome": "Spid e FSE" }
   ]
+}
+,
+{
+  "slug": "dispensario-farmap",
+  "tipo": "dispensario",
+  "nome": "Dispensario FarmaP",
+  "citta": "Città",
+  "provincia": "Provincia",
+  "regione": "Regione",
+  "indirizzo": "Dispensario FarmaP, Via Esempio 1, 00000 Città",
+  "telefono": "+39 0000 000000",
+  "lat": 45.0,
+  "lng": 9.0,
+  "farmaciaDiRiferimento": "farmacia-di-nibbiano",
+  "orarioApertura": { "lun_sab": ["09:00", "13:00"], "dom": null },
+  "orari": [["Lun–Sab", "9:00–13:00"], ["Domenica", "Chiusa"]],
+  "social": { "instagram": "" },
+  "servizi": []
 }
 ]
