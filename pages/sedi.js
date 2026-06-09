@@ -47,6 +47,7 @@ export default function Home() {
   const farmacieLista = filtra("farmacia");
   const parafarmacieLista = filtra("parafarmacia");
   const dispensariLista = filtra("dispensario");
+  const altreStruttureLista = [...parafarmacieLista, ...dispensariLista];
 
   return (
     <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
@@ -113,9 +114,9 @@ export default function Home() {
             ))}
           </div>
 
-          {parafarmacieLista.length > 0 && (
+          {altreStruttureLista.length > 0 && (
             <>
-              <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20, marginTop: 16 }}>La nostra parafarmacia</div>
+              <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20, marginTop: 16 }}>Altre strutture del gruppo</div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
                 {parafarmacieLista.map((f) => (
                   <div
@@ -150,14 +151,6 @@ export default function Home() {
                     </div>
                   </div>
                 ))}
-              </div>
-            </>
-          )}
-
-          {dispensariLista.length > 0 && (
-            <>
-              <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20, marginTop: 16 }}>Il nostro dispensario</div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
                 {dispensariLista.map((f) => {
                   const farmaciaRef = farmacie.find((x) => x.slug === f.farmaciaDiRiferimento);
                   return (
