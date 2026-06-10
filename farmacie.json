@@ -142,7 +142,6 @@
     "orari": [["Lun–Sab", "8:30–12:30 / 15:00–19:30"], ["Domenica", "Chiusa"]],
     "servizi": [
       { "nome": "Misurazione Pressione Arteriosa" },
-      { "nome": "Misurazione Peso Corporeo" },
       { "nome": "Holter Cardiaco" },
       { "nome": "Holter Pressorio" },
       { "nome": "ECG" },
@@ -151,9 +150,11 @@
       { "nome": "Tamponi Streptococco e Covid" },
       { "nome": "Foratura Lobi" },
       { "nome": "Noleggio Ausili e Dispositivi Medici" },
+      { "nome": "Noleggio Macchina Magnetoterapia" },
       { "nome": "Deblistering Farmaci" },
       { "nome": "Servizi CUP" },
-      { "nome": "Screening Colon-Retto" }
+      { "nome": "Screening Colon-Retto" },
+      { "nome": "Consegna a Domicilio"}
     ]
   },
   {

@@ -8,7 +8,7 @@ export const categorie = [
   },
   {
     titolo: "Analisi e test",
-    servizi: ["Glicemia", "Profilo Lipidico Completo", "Emoglobina Glicata", "Dosaggio Vitamina D", "Tampone Streptococco e Covid", "Breath Test Helicobacter Pylori", "Recaller Test"],
+    servizi: ["Glicemia", "Profilo Lipidico Completo", "Emoglobina Glicata", "Dosaggio Vitamina D", "Tampone Streptococco e Covid", "Breath Test Helicobacter Pylori", "Recaller Test", "Food Plan"],
   },
   {
     titolo: "Prevenzione",
