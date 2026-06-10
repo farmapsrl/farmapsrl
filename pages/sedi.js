@@ -40,83 +40,13 @@ export default function Home() {
         f.tipo === tipo &&
         (f.nome.toLowerCase().includes(cerca.toLowerCase()) ||
           f.citta.toLowerCase().includes(cerca.toLowerCase()) ||
-          f.indirizzo.toLowerCase().includes(cerca.toLowerCase()) ||Altre 
+          f.indirizzo.toLowerCase().includes(cerca.toLowerCase()) ||
           (f.provincia && f.provincia.toLowerCase().includes(cerca.toLowerCase())))
     );
 
   const farmacieLista = filtra("farmacia");
   const parafarmacieLista = filtra("parafarmacia");
   const dispensariLista = filtra("dispensario");
-  {(parafarmacieLista.length > 0 || dispensariLista.length > 0) && (
-            <>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
-                {parafarmacieLista.map((f) => (
-                  <div key={f.slug}>
-                    <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>La nostra parafarmacia</div>
-                    <div
-                      onClick={() => { window.location.href = "/" + f.slug; }}
-                      style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}
-                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)"; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.boxShadow = "none"; }}
-                    >
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
-                        <div>
-                          <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
-                          <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
-                        </div>
-                        <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap" }}>
-                          {isAperta(f) ? "Aperta" : "Chiusa"}
-                        </span>
-                      </div>
-                      <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                        <span>📍</span><span>{f.indirizzo}</span>
-                      </div>
-                      <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
-                        <span>📞</span><span>{f.telefono}</span>
-                      </div>
-                      <div style={{ fontSize: 13, color: "#555", marginBottom: 20, display: "flex", alignItems: "center", gap: 8 }}>
-                        <span>🕐</span>
-                        <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
-                      </div>
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #f0f0f0", paddingTop: 14 }}>
-                        <span style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500 }}>Scopri i nostri servizi</span>
-                        <span style={{ fontSize: 16, color: "#3B6D11" }}>→</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                {dispensariLista.map((f) => {
-                  const farmaciaRef = farmacie.find((x) => x.slug === f.farmaciaDiRiferimento);
-                  return (
-                    <div key={f.slug}>
-                      <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>Il nostro dispensario</div>
-                      <div style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
-                        <div style={{ marginBottom: 14 }}>
-                          <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
-                          <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
-                        </div>
-                        <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                          <span>📍</span><span>{f.indirizzo}</span>
-                        </div>
-                        <div style={{ fontSize: 13, color: "#555", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
-                          <span>🕐</span>
-                          <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
-                        </div>
-                        {farmaciaRef && (
-                          <div style={{ fontSize: 12, color: "#888", borderTop: "1px solid #f0f0f0", paddingTop: 12 }}>
-                            Gestito da{" "}
-                            <a href={"/" + farmaciaRef.slug} style={{ color: "#3B6D11", textDecoration: "none", fontWeight: 500 }}>
-                              {farmaciaRef.nome}
-                            </a>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </>
-          )}
 
   return (
     <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
@@ -183,13 +113,12 @@ export default function Home() {
             ))}
           </div>
 
-          {altreStruttureLista.length > 0 && (
-            <>
-              <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20, marginTop: 16 }}>strutture del gruppo</div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
-                {parafarmacieLista.map((f) => (
+          {(parafarmacieLista.length > 0 || dispensariLista.length > 0) && (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
+              {parafarmacieLista.map((f) => (
+                <div key={f.slug}>
+                  <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>La nostra parafarmacia</div>
                   <div
-                    key={f.slug}
                     onClick={() => { window.location.href = "/" + f.slug; }}
                     style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}
                     onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)"; }}
@@ -219,11 +148,14 @@ export default function Home() {
                       <span style={{ fontSize: 16, color: "#3B6D11" }}>→</span>
                     </div>
                   </div>
-                ))}
-                {dispensariLista.map((f) => {
-                  const farmaciaRef = farmacie.find((x) => x.slug === f.farmaciaDiRiferimento);
-                  return (
-                    <div key={f.slug} style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
+                </div>
+              ))}
+              {dispensariLista.map((f) => {
+                const farmaciaRef = farmacie.find((x) => x.slug === f.farmaciaDiRiferimento);
+                return (
+                  <div key={f.slug}>
+                    <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>Il nostro dispensario</div>
+                    <div style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
                       <div style={{ marginBottom: 14 }}>
                         <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
                         <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
@@ -244,10 +176,10 @@ export default function Home() {
                         </div>
                       )}
                     </div>
-                  );
-                })}
-              </div>
-            </>
+                  </div>
+                );
+              })}
+            </div>
           )}
 
         </div>
