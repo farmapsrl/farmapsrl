@@ -219,7 +219,29 @@ export default function PaginaFarmacia({ farmacia }) {
               </a>
             </div>
           )}
-
+{(() => {
+            const dispensario = farmacie.find((f) => f.tipo === "dispensario" && f.farmaciaDiRiferimento === farmacia.slug);
+            if (!dispensario) return null;
+            return (
+              <div style={{ marginBottom: 48, padding: "1.5rem", background: "#EAF3DE", border: "1px solid #C0DD97", borderRadius: 14 }}>
+                <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>Gestiamo anche</div>
+                <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, fontWeight: 400, marginBottom: 8, color: "#1a1a1a" }}>{dispensario.nome}</div>
+                <div style={{ fontSize: 13, color: "#555", marginBottom: 6, display: "flex", alignItems: "flex-start", gap: 8 }}>
+                  <span>📍</span><span>{dispensario.indirizzo}</span>
+                </div>
+                {dispensario.telefono && dispensario.telefono !== "+39 0000 000000" && (
+                  <div style={{ fontSize: 13, color: "#555", marginBottom: 6, display: "flex", alignItems: "center", gap: 8 }}>
+                    <span>📞</span><span>{dispensario.telefono}</span>
+                  </div>
+                )}
+                {dispensario.orari && dispensario.orari.length > 0 && (
+                  <div style={{ fontSize: 13, color: "#555", display: "flex", alignItems: "center", gap: 8 }}>
+                    <span>🕐</span><span>{dispensario.orari[0][1]}</span>
+                  </div>
+                )}
+              </div>
+            );
+          })()}
           {haServizi ? (
             <div style={{ marginBottom: 48, display: "flex", flexDirection: "column", gap: 36 }}>
               {categorie.map((cat) => {

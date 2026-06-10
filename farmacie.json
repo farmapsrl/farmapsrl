@@ -354,8 +354,8 @@
   "lat": 45.0,
   "lng": 9.0,
   "farmaciaDiRiferimento": "farmacia-di-nibbiano",
-  "orarioApertura": { "lun e ven": ["08:30", "12:30"], "il primo mercoledì del mese"  ["15","18"] },
-  "orari": [["Lun–Sab", "9:00–13:00"], ["Domenica", "Chiusa"]],
+  "orarioApertura": { "lun e ven": ["08:30", "12:30"], "il primo mercoledì del mese" ["15", "19"] },
+  "orari": [["Lunedì e Venerdì", "8:30–12:30"], ["Il primo mercoledì del mese", "15-18"]],
   "social": { "instagram": "" },
   "servizi": []
 }
