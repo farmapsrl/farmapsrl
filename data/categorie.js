@@ -16,7 +16,7 @@ export const categorie = [
   },
   {
     titolo: "Servizi al cittadino",
-    servizi: ["Servizi CUP", "Attivazione SPID", "Attivazione e Assistenza SPID", "Pagamento Ticket", "Ritiro Referti", "Ritiro Referti esami di laboratorio", "Consegna a Domicilio"],
+    servizi: ["Servizi CUP", "Attivazione e Assistenza SPID", "Pagamento Ticket", "Ritiro Referti esami di laboratorio", "Consegna a Domicilio"],
   },
   {
     titolo: "Gestione terapia",
