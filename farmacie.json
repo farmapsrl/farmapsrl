@@ -336,10 +336,10 @@
   "distributoreH24": false,
   "social": { "facebook": "", "instagram": "" },
   "servizi": [
-    { "nome": "Ritiro referti in farmacia" },
-    { "nome": "Screening colon retto" },
-    { "nome": "Spid e FSE" }
-  ]
+  { "nome": "Ritiro Referti" },
+  { "nome": "Screening Colon-Retto" },
+  { "nome": "Attivazione SPID" }
+]
 }
 ,
 {
