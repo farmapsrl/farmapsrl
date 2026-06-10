@@ -286,7 +286,7 @@
       { "nome": "Servizi CUP" },
       { "nome": "Attivazione e Assistenza SPID" },
       { "nome": "Pagamento Ticket" },
-      { "nome": "Ritiro Referti" },
+      { "nome": "Ritiro Referti esami di laboratorio" },
       { "nome": "Consegna a Domicilio" },
       { "nome": "Noleggio Ausili e Dispositivi Medici" },
       { "nome": "Deblistering Farmaci" },
@@ -335,7 +335,7 @@
   "distributoreH24": false,
   "social": { "facebook": "", "instagram": "" },
   "servizi": [
-  { "nome": "Ritiro Referti" },
+  { "nome": "Ritiro Referti esami di laboratorio" },
   { "nome": "Screening Colon-Retto" },
   { "nome": "Attivazione e Assistenza SPID" }
 ]
