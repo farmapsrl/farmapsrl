@@ -24,6 +24,6 @@ export const categorie = [
   },
   {
     titolo: "Altri servizi",
-    servizi: ["Misurazione Peso Corporeo", "Noleggio Ausili e Dispositivi Medici", "Foratura Lobi", "Foratura Lobi e Naso"],
+    servizi: ["Misurazione Peso Corporeo", "Noleggio Ausili e Dispositivi Medici", "Noleggio Magnetoterapia", "Foratura Lobi", "Foratura Lobi e Naso"],
   },
 ];
