@@ -342,7 +342,7 @@
 }
 ,
 {
-  "slug": "dispensari-farmap",
+  "slug": "dispensario-farmap",
   "tipo": "dispensario",
   "nome": "Dispensario di Pecorara",
   "citta": "Pecorara",
@@ -353,8 +353,9 @@
   "lat": 44.8734,
   "lng": 9.4891,
   "farmaciaDiRiferimento": "farmacia-di-nibbiano",
-  "orarioApertura": { "lun e ven": ["08:30", "12:30"], "il primo mercoledì del mese" ["15", "19"] },
-  "orari": [["Lunedì e Venerdì", "8:30–12:30"], ["Il primo mercoledì del mese", "15-18"]],
+  "orarioApertura": { "lun_ven": ["08:30", "12:30"] },
+  "orari": [["Lunedì e Venerdì", "8:30–12:30"]],
+  "notaOrari": "Aperto anche il primo mercoledì del mese dalle 15:00 alle 19:00",
   "social": { "instagram": "" },
   "servizi": []
 }
