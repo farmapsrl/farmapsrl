@@ -154,7 +154,10 @@
       { "nome": "Deblistering Farmaci" },
       { "nome": "Servizi CUP" },
       { "nome": "Screening Colon-Retto" },
-      { "nome": "Consegna a Domicilio"}
+      { "nome": "Consegna a Domicilio"},
+      { "nome": "Consulenza Nutrizionista" },
+      { "nome": "Consulenza Fisioterapista" }
+
     ]
   },
   {
