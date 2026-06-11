@@ -179,7 +179,28 @@
     ["Sabato", "8:30–12:30"],
     ["Domenica", "Chiusa"]
   ],
-  "servizi": []
+  "servizi": 
+  [
+  { "nome": "Misurazione Pressione Arteriosa" },
+  { "nome": "ECG" },
+  { "nome": "Holter Cardiaco" },
+  { "nome": "Holter Pressorio" },
+  { "nome": "Tampone Streptococco e Covid" },
+  { "nome": "Screening Colon-Retto" },
+  { "nome": "Foratura Lobi" },
+  { "nome": "Noleggio Ausili e Dispositivi Medici", "dettagli": ["Carrozzina", "Girello", "Stampelle", "Sedia comoda da bagno", "Tiralatte"] },
+  { "nome": "Glicemia" },
+  { "nome": "Profilo Lipidico Completo" },
+  { "nome": "Emoglobina Glicata" },
+  { "nome": "Dosaggio Vitamina D" },
+  { "nome": "PSA" },
+  { "nome": "TSH" },
+  { "nome": "Proteina C Reattiva (PCR)" },
+  { "nome": "Ferritina" },
+  { "nome": "INR" },
+  { "nome": "Test di Gravidanza" },
+  { "nome": "Esame delle Urine" }
+]
 },
   {
     "slug": "farmacia-piu",
