@@ -85,6 +85,49 @@
     ]
   },
   {
+    "slug": "farmacia-amica",
+    "tipo": "farmacia",
+    "nome": "Farmacia Amica",
+    "citta": "Belgioioso (PV)",
+    "provincia": "Pavia",
+    "regione": "Lombardia",
+    "indirizzo": "Farmacia Amica, Via XX Settembre 34, 27011 Belgioioso PV",
+    "telefono": "+39 0382 970602",
+    "lat": 45.15938772004701,
+    "lng": 9.315913481745584,
+    "social": {
+      "instagram": "https://www.instagram.com/farmaciamicabelgioioso?igsh=NHJ0bGRkYmdkdzlp"
+    },
+    "distributoreH24": true,
+    "cosmetici": [
+      { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
+      { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" },
+      { "brand": "Narika", "logo": "/cosmetici/narika.png" },
+      { "brand": "Dolomia", "logo": "/cosmetici/dolomia.png" }
+    ],
+    "orarioApertura": { "lun_sab": ["08:30", "12:30", "15:00", "19:30"], "dom": null },
+    "orari": [["Lun–Sab", "8:30–12:30 / 15:00–19:30"], ["Domenica", "Chiusa"]],
+    "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
+      { "nome": "Holter Cardiaco" },
+      { "nome": "Holter Pressorio" },
+      { "nome": "ECG" },
+      { "nome": "Glicemia" },
+      { "nome": "Profilo Lipidico Completo" },
+      { "nome": "Tamponi Streptococco e Covid" },
+      { "nome": "Foratura Lobi" },
+      { "nome": "Noleggio Ausili e Dispositivi Medici" },
+      { "nome": "Noleggio Macchina Magnetoterapia" },
+      { "nome": "Deblistering Farmaci" },
+      { "nome": "Servizi CUP" },
+      { "nome": "Screening Colon-Retto" },
+      { "nome": "Consegna a Domicilio"},
+      { "nome": "Consulenza Nutrizionista" },
+      { "nome": "Consulenza Fisioterapista" }
+
+    ]
+  },
+  {
     "slug": "farmacia-san-giorgio",
     "tipo": "farmacia",
     "nome": "Farmacia San Giorgio",
@@ -138,49 +181,6 @@
   ],
   "servizi": []
 },
-{
-    "slug": "farmacia-amica",
-    "tipo": "farmacia",
-    "nome": "Farmacia Amica",
-    "citta": "Belgioioso (PV)",
-    "provincia": "Pavia",
-    "regione": "Lombardia",
-    "indirizzo": "Farmacia Amica, Via XX Settembre 34, 27011 Belgioioso PV",
-    "telefono": "+39 0382 970602",
-    "lat": 45.15938772004701,
-    "lng": 9.315913481745584,
-    "social": {
-      "instagram": "https://www.instagram.com/farmaciamicabelgioioso?igsh=NHJ0bGRkYmdkdzlp"
-    },
-    "distributoreH24": true,
-    "cosmetici": [
-      { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
-      { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" },
-      { "brand": "Narika", "logo": "/cosmetici/narika.png" },
-      { "brand": "Dolomia", "logo": "/cosmetici/dolomia.png" }
-    ],
-    "orarioApertura": { "lun_sab": ["08:30", "12:30", "15:00", "19:30"], "dom": null },
-    "orari": [["Lun–Sab", "8:30–12:30 / 15:00–19:30"], ["Domenica", "Chiusa"]],
-    "servizi": [
-      { "nome": "Misurazione Pressione Arteriosa" },
-      { "nome": "Holter Cardiaco" },
-      { "nome": "Holter Pressorio" },
-      { "nome": "ECG" },
-      { "nome": "Glicemia" },
-      { "nome": "Profilo Lipidico Completo" },
-      { "nome": "Tamponi Streptococco e Covid" },
-      { "nome": "Foratura Lobi" },
-      { "nome": "Noleggio Ausili e Dispositivi Medici" },
-      { "nome": "Noleggio Macchina Magnetoterapia" },
-      { "nome": "Deblistering Farmaci" },
-      { "nome": "Servizi CUP" },
-      { "nome": "Screening Colon-Retto" },
-      { "nome": "Consegna a Domicilio"},
-      { "nome": "Consulenza Nutrizionista" },
-      { "nome": "Consulenza Fisioterapista" }
-
-    ]
-  },
   {
     "slug": "farmacia-piu",
     "tipo": "farmacia",
