@@ -40,7 +40,7 @@ export default function Nav() {
       }}
     >
       <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-        <img src="/LogoFarmaP.png" alt="FarmaP" style={{ height: 52, width: "auto" }} />
+       <img src="/LogoFarmaP.png" alt="FarmaP" style={{ height: 72, width: "auto" }} />
       </a>
       <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
         {navLink("/sedi", "Sedi")}
