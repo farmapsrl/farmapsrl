@@ -163,10 +163,16 @@ export default function Home() {
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
                         <span>📍</span><span>{f.indirizzo}</span>
                       </div>
-                      <div style={{ fontSize: 13, color: "#555", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
-                        <span>🕐</span>
-                        <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
-                      </div>
+                      <div style={{ fontSize: 13, color: "#555", marginBottom: 16, display: "flex", flexDirection: "column", gap: 4 }}>
+  {f.orari && f.orari.map(([giorno, ore], i) => (
+    <div key={i} style={{ display: "flex", gap: 8, alignItems: "center" }}>
+      <span>🕐</span>
+      <span style={{ color: "#aaa", minWidth: 140 }}>{giorno}</span>
+      <span>{ore}</span>
+    </div>
+  ))}
+  {f.notaOrari && <div style={{ fontSize: 12, color: "#3B6D11", marginTop: 4 }}>{f.notaOrari}</div>}
+</div>
                       {farmaciaRef && (
                         <div style={{ fontSize: 12, color: "#888", borderTop: "1px solid #f0f0f0", paddingTop: 12 }}>
                           Gestito da{" "}
