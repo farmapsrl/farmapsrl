@@ -72,7 +72,7 @@ export default function Home() {
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
           <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20 }}>Le nostre farmacie</div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 16, marginBottom: 48 }}>
             {farmacieLista.map((f) => (
               <div
                 key={f.slug}
@@ -114,7 +114,7 @@ export default function Home() {
           </div>
 
           {(parafarmacieLista.length > 0 || dispensariLista.length > 0) && (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 16, marginBottom: 48 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 16, marginBottom: 48 }}>
               {parafarmacieLista.map((f) => (
                 <div key={f.slug}>
                   <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>La nostra parafarmacia</div>
