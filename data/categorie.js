@@ -8,7 +8,7 @@ export const categorie = [
   },
   {
     titolo: "Analisi e test",
-    servizi: ["Glicemia", "Profilo Lipidico Completo", "Emoglobina Glicata", "Dosaggio Vitamina D", "Tampone Streptococco e Covid", "Breath Test Helicobacter Pylori", "Recaller Test", "Food Plan"],
+    servizi: ["Glicemia", "Profilo Lipidico Completo", "Emoglobina Glicata", "Dosaggio Vitamina D", "Tampone Streptococco e Covid", "Breath Test Helicobacter Pylori", "Recaller Test", "FoodPlan"],
   },
   {
     titolo: "Prevenzione",
@@ -21,6 +21,10 @@ export const categorie = [
   {
     titolo: "Gestione terapia",
     servizi: ["Deblistering Farmaci", "Laboratorio Preparazione Galenica"],
+  },
+  {
+    titolo: "Specialisti in sede",
+    servizi: ["Consulenza Nutrizionista", "Consulenza Fisioterapista"],
   },
   {
     titolo: "Altri servizi",
