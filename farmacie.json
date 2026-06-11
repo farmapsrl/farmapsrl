@@ -118,6 +118,27 @@
     ]
   },
   {
+  "slug": "farmacia-borgolombardo",
+  "tipo": "farmacia",
+  "nome": "Farmacia Borgolombardo",
+  "citta": "San Giuliano Milanese (MI)",
+  "provincia": "Milano",
+  "regione": "Lombardia",
+  "indirizzo": "Farmacia Borgolombardo, Via Labriola 18, 20098 San Giuliano Milanese MI",
+  "telefono": "+39 02 9848432",
+  "lat": 45.3986,
+  "lng": 9.2836,
+  "distributoreH24": false,
+  "social": { "instagram": "" },
+  "orarioApertura": { "lun_sab": ["08:30", "12:30", "15:30", "19:30"], "sab": ["08:30", "12:30"], "dom": null },
+  "orari": [
+    ["Lun–Ven", "8:30–12:30 / 15:30–19:30"],
+    ["Sabato", "8:30–12:30"],
+    ["Domenica", "Chiusa"]
+  ],
+  "servizi": []
+},
+{
     "slug": "farmacia-amica",
     "tipo": "farmacia",
     "nome": "Farmacia Amica",
