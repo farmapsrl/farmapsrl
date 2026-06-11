@@ -85,39 +85,6 @@
     ]
   },
   {
-    "slug": "farmacia-san-giorgio",
-    "tipo": "farmacia",
-    "nome": "Farmacia San Giorgio",
-    "citta": "Fizzonasco (MI)",
-    "provincia": "Milano",
-    "regione": "Lombardia",
-    "indirizzo": "Farmacia San Giorgio, Via Liguria 14, 20072 Fizzonasco MI",
-    "telefono": "+39 02 90428868",
-    "lat": 45.37511710331307,
-    "lng": 9.168798554773916,
-    "cosmetici": [
-      { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
-      { "brand": "Ceramol", "logo": "/cosmetici/ceramol.png" },
-      { "brand": "Lovren", "logo": "/cosmetici/lovren.png", "scale": 1.4 },
-      { "brand": "La Roche-Posay", "logo": "/cosmetici/laroche-posay.png" },
-      { "brand": "Vea", "logo": "/cosmetici/vea.png" }
-    ],
-    "orarioApertura": { "lun_ven": ["09:00", "19:00"], "sab": ["09:00", "13:00"], "dom": null },
-    "orari": [["Lun–Ven", "9:00–19:00"], ["Sabato", "9:00–13:00"], ["Domenica", "Chiusa"]],
-    "servizi": [
-      { "nome": "Misurazione Pressione Arteriosa" },
-      { "nome": "Misurazione Peso Corporeo" },
-      { "nome": "Holter Pressorio" },
-      { "nome": "Glicemia" },
-      { "nome": "Tampone Streptococco e Covid" },
-      { "nome": "Vaccinazione Antinfluenzale" },
-      { "nome": "Foratura Lobi" },
-      { "nome": "Deblistering Farmaci" },
-      { "nome": "Servizi CUP" },
-      { "nome": "Screening Colon-Retto" }
-    ]
-  },
-  {
     "slug": "farmacia-amica",
     "tipo": "farmacia",
     "nome": "Farmacia Amica",
@@ -156,6 +123,39 @@
       { "nome": "Consegna a Domicilio" },
       { "nome": "Consulenza Nutrizionista" },
       { "nome": "Consulenza Fisioterapista" }
+    ]
+  },
+  {
+    "slug": "farmacia-san-giorgio",
+    "tipo": "farmacia",
+    "nome": "Farmacia San Giorgio",
+    "citta": "Fizzonasco (MI)",
+    "provincia": "Milano",
+    "regione": "Lombardia",
+    "indirizzo": "Farmacia San Giorgio, Via Liguria 14, 20072 Fizzonasco MI",
+    "telefono": "+39 02 90428868",
+    "lat": 45.37511710331307,
+    "lng": 9.168798554773916,
+    "cosmetici": [
+      { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
+      { "brand": "Ceramol", "logo": "/cosmetici/ceramol.png" },
+      { "brand": "Lovren", "logo": "/cosmetici/lovren.png", "scale": 1.4 },
+      { "brand": "La Roche-Posay", "logo": "/cosmetici/laroche-posay.png" },
+      { "brand": "Vea", "logo": "/cosmetici/vea.png" }
+    ],
+    "orarioApertura": { "lun_ven": ["09:00", "19:00"], "sab": ["09:00", "13:00"], "dom": null },
+    "orari": [["Lun–Ven", "9:00–19:00"], ["Sabato", "9:00–13:00"], ["Domenica", "Chiusa"]],
+    "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
+      { "nome": "Misurazione Peso Corporeo" },
+      { "nome": "Holter Pressorio" },
+      { "nome": "Glicemia" },
+      { "nome": "Tampone Streptococco e Covid" },
+      { "nome": "Vaccinazione Antinfluenzale" },
+      { "nome": "Foratura Lobi" },
+      { "nome": "Deblistering Farmaci" },
+      { "nome": "Servizi CUP" },
+      { "nome": "Screening Colon-Retto" }
     ]
   },
   {
