@@ -27,6 +27,8 @@ const descrizioni = {
   "Laboratorio Preparazione Galenica": "Il laboratorio galenico della farmacia consente la preparazione di farmaci personalizzati su prescrizione medica, nei dosaggi e nelle forme farmaceutiche più adatte alle esigenze del singolo paziente.\n\nUn servizio prezioso per chi necessita di formulazioni non disponibili in commercio, per pazienti pediatrici o per terapie particolari.\n\nContattaci per informazioni e tempi di preparazione.",
   "FoodPlan": "FoodPlan combina l'analisi della sensibilità alimentare a 92 alimenti, la reattività al glutine, il test di predisposizione genetica all'intolleranza al lattosio e il test dell'interleuchina 6 per valutare il grado di infiammazione.\n\n Utile in caso di disturbi gastrointestinali, stanchezza e sonnolenza, reattività cutanea, salutr della donna, sbalzi o difficoltà a perere peso.",
   "Screening Colon-Retto": "Lo screening del colon retto è un esame preventivo fondamentale per la diagnosi precoce del tumore del colon-retto, uno dei più frequenti nella popolazione adulta.\n\nLa diagnosi precoce aumenta significativamente le possibilità di guarigione.",
+  "Consulenza Nutrizionista": "La farmacia ospita un nutrizionista professionista per consulenze personalizzate su alimentazione, peso corporeo e stili di vita.\n\nPer prenotare un appuntamento contatta direttamente la farmacia.",
+"Consulenza Fisioterapista": "La farmacia ospita un fisioterapista professionista per consulenze e trattamenti riabilitativi.\n\nPer prenotare un appuntamento contatta direttamente la farmacia.",
 };
 
 export const descrizioniRegionali = {
