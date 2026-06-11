@@ -117,6 +117,7 @@
       { "nome": "Tampone Streptococco e Covid" },
       { "nome": "Foratura Lobi" },
       { "nome": "Noleggio Ausili e Dispositivi Medici" },
+      { "nome": "Noleggio Magnetoterapia" },
       { "nome": "Deblistering Farmaci" },
       { "nome": "Servizi CUP" },
       { "nome": "Screening Colon-Retto" },
@@ -241,7 +242,8 @@
       { "nome": "Pagamento Ticket" },
       { "nome": "Ritiro Referti esami di laboratorio" },
       { "nome": "Consegna a Domicilio" },
-      { "nome": "Screening Colon-Retto" }
+      { "nome": "Screening Colon-Retto" },
+      { "nome": "Noleggio Magnetoterapia" }
     ]
   },
   {
@@ -290,7 +292,8 @@
       { "nome": "Pagamento Ticket" },
       { "nome": "Ritiro Referti esami di laboratorio" },
       { "nome": "Consegna a Domicilio" },
-      { "nome": "Screening Colon-Retto" }
+      { "nome": "Screening Colon-Retto" },
+      { "nome": "Noleggio Magnetoterapia" }
     ]
   },
   {
