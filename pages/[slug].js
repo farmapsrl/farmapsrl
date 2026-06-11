@@ -260,9 +260,11 @@ export default function PaginaFarmacia({ farmacia }) {
                           onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.background = "#EEF5E8"; }}
                           onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.background = "#fff"; }}
                           style={{ background: "#fff", border: "1px solid #eee", borderRadius: 14, padding: "1.25rem", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", transition: "border-color 0.15s, background 0.15s" }}
-                        >
-                          <div style={{ fontSize: 14, fontWeight: 500, color: "#222", lineHeight: 1.4 }}>{s.nome}</div>
-                          <span style={{ color: "#3B6D11", fontSize: 16, marginLeft: 8, flexShrink: 0 }}>→</span>
+                        ><div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                           {s.icona && <span style={{ fontSize: 16 }}>{s.icona}</span>}
+                            <div style={{ fontSize: 14, fontWeight: 500, color: "#222", lineHeight: 1.4 }}>{s.nome}</div>
+                            </div>
+                            <span style={{ color: "#3B6D11", fontSize: 16, marginLeft: 8, flexShrink: 0 }}>→</span>
                         </div>
                       ))}
                     </div>
