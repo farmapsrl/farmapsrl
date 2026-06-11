@@ -263,6 +263,22 @@ export default function Deblistering() {
 
         </div>
       </div>
+      <div style={{ background: "#3B6D11", padding: "3rem 2rem", textAlign: "center" }}>
+        <div style={{ maxWidth: 600, margin: "0 auto" }}>
+          <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 24, fontWeight: 400, color: "#fff", marginBottom: 12 }}>
+            Vuoi attivare il servizio di deblistering?
+          </div>
+          <p style={{ fontSize: 14, color: "#C0DD97", lineHeight: 1.7, marginBottom: 24 }}>
+            Contattaci per ricevere informazioni personalizzate e scoprire come il servizio può adattarsi alle esigenze della tua struttura o dei tuoi pazienti.
+          </p>
+          <a
+           href="mailto:info@farmaciagiardino.it"
+            style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 32px", background: "#fff", color: "#3B6D11", borderRadius: 10, fontSize: 15, fontWeight: 600, textDecoration: "none" }}
+          >
+            ✉ Scrivici una mail
+          </a>
+        </div>
+      </div>
             <footer style={{ padding: "2rem", borderTop: "1px solid #eee", background: "#fff", textAlign: "center", fontSize: 12, color: "#aaa", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
         <span style={{ maxWidth: 600, textAlign: "center", color: "#bbb", lineHeight: 1.6 }}>Le informazioni contenute in questo sito hanno scopo puramente informativo e non sostituiscono la consulenza medica o farmaceutica professionale. Per diagnosi e terapie rivolgiti sempre a un professionista sanitario.</span>
         <span>© {new Date().getFullYear()} Gruppo FarmaP · Tutti i diritti riservati · <a href="/note-legali" style={{ color: "#aaa", textDecoration: "underline" }}>Note legali</a> · <a href="https://www.iubenda.com/privacy-policy/71842433" target="_blank" rel="noreferrer" style={{ color: "#aaa", textDecoration: "underline" }}>Privacy Policy</a> · <a href="https://www.iubenda.com/privacy-policy/71842433/cookie-policy" target="_blank" rel="noreferrer" style={{ color: "#aaa", textDecoration: "underline" }}>Cookie Policy</a></span>
