@@ -28,6 +28,12 @@ function isAperta(farmacia) {
   return false;
 }
 
+function badgeProvincia(provincia) {
+  if (provincia === "Milano") return { bg: "#E6F1FB", color: "#0C447C" };
+  if (provincia === "Piacenza") return { bg: "#FAEEDA", color: "#633806" };
+  return { bg: "#EAF3DE", color: "#27500A" };
+}
+
 export default function Home() {
   const [cerca, setCerca] = useState("");
   const [mounted, setMounted] = useState(false);
@@ -73,83 +79,99 @@ export default function Home() {
 
           <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20 }}>Le nostre farmacie</div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 16, marginBottom: 48 }}>
-            {farmacieLista.map((f) => (
-              <div
-                key={f.slug}
-                onClick={() => { window.location.href = "/" + f.slug; }}
-                style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.boxShadow = "none"; }}
-              >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
-                  <div>
-                    <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
-                    <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
+            {farmacieLista.map((f) => {
+              const badge = badgeProvincia(f.provincia);
+              return (
+                <div
+                  key={f.slug}
+                  onClick={() => { window.location.href = "/" + f.slug; }}
+                  style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.15)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.05)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
+                    <div>
+                      <div style={{ marginBottom: 6 }}>
+                        <span style={{ fontSize: 10, background: badge.bg, color: badge.color, padding: "2px 8px", borderRadius: 20, fontWeight: 500 }}>
+                          {f.provincia?.toUpperCase()}
+                        </span>
+                      </div>
+                      <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
+                      <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
+                    </div>
+                    <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap" }}>
+                      {isAperta(f) ? "Aperta" : "Chiusa"}
+                    </span>
                   </div>
-                  <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap" }}>
-                    {isAperta(f) ? "Aperta" : "Chiusa"}
-                  </span>
-                </div>
-                <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                  <span>📍</span><span>{f.indirizzo}</span>
-                </div>
-                <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
-                  <span>📞</span><span>{f.telefono}</span>
-                </div>
-                <div style={{ fontSize: 13, color: "#555", marginBottom: f.distributoreH24 ? 12 : 20, display: "flex", alignItems: "center", gap: 8 }}>
-                  <span>🕐</span>
-                  <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
-                </div>
-                {f.distributoreH24 && (
-                  <div style={{ fontSize: 11, color: "#3B6D11", background: "#EAF3DE", border: "1px solid #C0DD97", borderRadius: 20, padding: "3px 10px", display: "inline-block", marginBottom: 16 }}>
-                    🕐 Distributore H24
+                  <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
+                    <span>📍</span><span>{f.indirizzo}</span>
                   </div>
-                )}
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #f0f0f0", paddingTop: 14 }}>
-                  <span style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500 }}>Scopri i nostri servizi</span>
-                  <span style={{ fontSize: 16, color: "#3B6D11" }}>→</span>
+                  <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
+                    <span>📞</span><span>{f.telefono}</span>
+                  </div>
+                  <div style={{ fontSize: 13, color: "#555", marginBottom: f.distributoreH24 ? 12 : 20, display: "flex", alignItems: "center", gap: 8 }}>
+                    <span>🕐</span>
+                    <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
+                  </div>
+                  {f.distributoreH24 && (
+                    <div style={{ fontSize: 11, color: "#3B6D11", background: "#EAF3DE", border: "1px solid #C0DD97", borderRadius: 20, padding: "3px 10px", display: "inline-block", marginBottom: 16 }}>
+                      🕐 Distributore H24
+                    </div>
+                  )}
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #f0f0f0", paddingTop: 14 }}>
+                    <span style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500 }}>Scopri i nostri servizi</span>
+                    <span style={{ fontSize: 16, color: "#3B6D11" }}>→</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {(parafarmacieLista.length > 0 || dispensariLista.length > 0) && (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 16, marginBottom: 48 }}>
-              {parafarmacieLista.map((f) => (
-                <div key={f.slug}>
-                  <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>La nostra parafarmacia</div>
-                  <div
-                    onClick={() => { window.location.href = "/" + f.slug; }}
-                    style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.boxShadow = "none"; }}
-                  >
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
-                      <div>
-                        <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
-                        <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
+              {parafarmacieLista.map((f) => {
+                const badge = badgeProvincia(f.provincia);
+                return (
+                  <div key={f.slug}>
+                    <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>La nostra parafarmacia</div>
+                    <div
+                      onClick={() => { window.location.href = "/" + f.slug; }}
+                      style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}
+                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.15)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.05)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                    >
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
+                        <div>
+                          <div style={{ marginBottom: 6 }}>
+                            <span style={{ fontSize: 10, background: badge.bg, color: badge.color, padding: "2px 8px", borderRadius: 20, fontWeight: 500 }}>
+                              {f.provincia?.toUpperCase()}
+                            </span>
+                          </div>
+                          <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
+                          <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
+                        </div>
+                        <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap" }}>
+                          {isAperta(f) ? "Aperta" : "Chiusa"}
+                        </span>
                       </div>
-                      <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap" }}>
-                        {isAperta(f) ? "Aperta" : "Chiusa"}
-                      </span>
-                    </div>
-                    <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                      <span>📍</span><span>{f.indirizzo}</span>
-                    </div>
-                    <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
-                      <span>📞</span><span>{f.telefono}</span>
-                    </div>
-                    <div style={{ fontSize: 13, color: "#555", marginBottom: 20, display: "flex", alignItems: "center", gap: 8 }}>
-                      <span>🕐</span>
-                      <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
-                    </div>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #f0f0f0", paddingTop: 14 }}>
-                      <span style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500 }}>Scopri i nostri servizi</span>
-                      <span style={{ fontSize: 16, color: "#3B6D11" }}>→</span>
+                      <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
+                        <span>📍</span><span>{f.indirizzo}</span>
+                      </div>
+                      <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
+                        <span>📞</span><span>{f.telefono}</span>
+                      </div>
+                      <div style={{ fontSize: 13, color: "#555", marginBottom: 20, display: "flex", alignItems: "center", gap: 8 }}>
+                        <span>🕐</span>
+                        <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #f0f0f0", paddingTop: 14 }}>
+                        <span style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500 }}>Scopri i nostri servizi</span>
+                        <span style={{ fontSize: 16, color: "#3B6D11" }}>→</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
               {dispensariLista.map((f) => {
                 const farmaciaRef = farmacie.find((x) => x.slug === f.farmaciaDiRiferimento);
                 return (
@@ -164,15 +186,15 @@ export default function Home() {
                         <span>📍</span><span>{f.indirizzo}</span>
                       </div>
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 16, display: "flex", flexDirection: "column", gap: 4 }}>
-  {f.orari && f.orari.map(([giorno, ore], i) => (
-    <div key={i} style={{ display: "flex", gap: 8, alignItems: "center" }}>
-      <span>🕐</span>
-      <span style={{ color: "#aaa", minWidth: 140 }}>{giorno}</span>
-      <span>{ore}</span>
-    </div>
-  ))}
-  {f.notaOrari && <div style={{ fontSize: 12, color: "#3B6D11", marginTop: 4 }}>{f.notaOrari}</div>}
-</div>
+                        {f.orari && f.orari.map(([giorno, ore], i) => (
+                          <div key={i} style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                            <span>🕐</span>
+                            <span style={{ color: "#aaa", minWidth: 140 }}>{giorno}</span>
+                            <span>{ore}</span>
+                          </div>
+                        ))}
+                        {f.notaOrari && <div style={{ fontSize: 12, color: "#3B6D11", marginTop: 4 }}>{f.notaOrari}</div>}
+                      </div>
                       {farmaciaRef && (
                         <div style={{ fontSize: 12, color: "#888", borderTop: "1px solid #f0f0f0", paddingTop: 12 }}>
                           Gestito da{" "}
