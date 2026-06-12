@@ -179,7 +179,10 @@ export default function Home() {
                     <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>Il nostro dispensario</div>
                     <div style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
                       <div style={{ marginBottom: 14 }}>
-                        <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 3 }}>
+                          <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18 }}>{f.nome}</div>
+                          {f.provincia && (() => { const badge = badgeProvincia(f.provincia); return <span style={{ fontSize: 10, background: badge.bg, color: badge.color, padding: "2px 8px", borderRadius: 20, fontWeight: 500 }}>{f.provincia.toUpperCase()}</span>; })()}
+                        </div>
                         <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
                       </div>
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
