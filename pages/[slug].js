@@ -213,32 +213,31 @@ export default function PaginaFarmacia({ farmacia }) {
                   </span>
                 )}
               </div>
-              <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 28 }}>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 28 }}>
                 <a href={"https://www.google.com/maps/search/" + encodeURIComponent(farmacia.indirizzo)} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 22px", borderRadius: 10, fontSize: 14, fontWeight: 600, textDecoration: "none", color: "#fff", background: "#3B6D11", border: "1px solid #3B6D11" }}>
                   <IcoPin size={15} /> Indicazioni
                 </a>
-                <a href={"tel:" + farmacia.telefono} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#333", background: "#fff" }}>
+                <a href={"tel:" + farmacia.telefono} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#444", background: "#fff" }}>
                   <IcoPhone size={15} /> Chiama
                 </a>
-                <a href={"https://wa.me/" + waNumero} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #C0DD97", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#25D366", background: "#fff" }}>
+                <a href={"https://wa.me/" + waNumero} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#444", background: "#fff" }}>
                   <IcoChat size={15} /> WhatsApp
                 </a>
                 {farmacia.email && (
-                  <a href={"mailto:" + farmacia.email} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#333", background: "#fff" }}>
+                  <a href={"mailto:" + farmacia.email} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#444", background: "#fff" }}>
                     <IcoMail size={15} /> Email
                   </a>
                 )}
                 {farmacia.social && farmacia.social.facebook && (
-                  <a href={farmacia.social.facebook} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#1877F2", background: "#fff" }}>
+                  <a href={farmacia.social.facebook} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#444", background: "#fff" }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                     Facebook
                   </a>
                 )}
                 {farmacia.social && farmacia.social.instagram && (
-                  <a href={farmacia.social.instagram} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#E1306C", background: "#fff" }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                      <circle cx="12" cy="12" r="4"/>
-                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                  <a href={farmacia.social.instagram} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#444", background: "#fff" }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
                     </svg>
                     Instagram
                   </a>
@@ -320,11 +319,16 @@ export default function PaginaFarmacia({ farmacia }) {
                             onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.background = "#fff"; }}
                             style={{ background: "#fff", border: "1px solid #eee", borderRadius: 14, padding: "1.25rem", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", transition: "border-color 0.15s, background 0.15s" }}
                           >
-                            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                              {s.icona && <span style={{ fontSize: 16 }}>{s.icona}</span>}
+                            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                              <div style={{ width: 32, height: 32, borderRadius: "50%", background: "#EAF3DE", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                                {s.icona
+                                  ? <span style={{ fontSize: 15, lineHeight: 1 }}>{s.icona}</span>
+                                  : <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                }
+                              </div>
                               <div style={{ fontSize: 14, fontWeight: 500, color: "#222", lineHeight: 1.4 }}>{s.nome}</div>
                             </div>
-                            <span style={{ color: "#3B6D11", fontSize: 16, marginLeft: 8, flexShrink: 0 }}>→</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3B6D11" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: 8, flexShrink: 0 }}><polyline points="9 18 15 12 9 6"/></svg>
                           </div>
                         ))}
                       </div>
