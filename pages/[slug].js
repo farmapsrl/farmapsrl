@@ -216,7 +216,6 @@ export default function PaginaFarmacia({ farmacia }) {
 
       <div style={{ padding: "4rem 2rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-
           {farmacia.cosmetici && farmacia.cosmetici.length > 0 && (
             <div style={{ display: "flex", gap: 28, marginBottom: 32, marginTop: 16, borderBottom: "2px solid #eee", paddingBottom: 12 }}>
               {haServizi && (
@@ -290,6 +289,26 @@ export default function PaginaFarmacia({ farmacia }) {
           )}
         </div>
       </div>
+
+      {farmacia.email && (
+        <div style={{ background: "#fff", borderTop: "1px solid #eee", padding: "3rem 2rem" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
+            <div>
+              <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>Lavora con noi</div>
+              <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 22, fontWeight: 400, color: "#1a1a1a", marginBottom: 8 }}>Cerchiamo persone appassionate</div>
+              <p style={{ fontSize: 14, color: "#666", lineHeight: 1.7, margin: 0, maxWidth: 480 }}>
+                Sei un farmacista, un assistente o un professionista della salute? Inviaci il tuo CV — valutiamo sempre nuove candidature.
+              </p>
+            </div>
+            
+              href={"mailto:" + farmacia.email + "?subject=Candidatura - " + farmacia.nome + "&body=Gentile team di " + farmacia.nome + ",%0D%0A%0D%0AVi invio la mia candidatura spontanea.%0D%0A%0D%0AIn allegato trovate il mio CV.%0D%0A%0D%0ACordiali saluti"}
+              style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 28px", background: "#3B6D11", color: "#fff", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}
+            >
+              ✉ Invia il tuo CV
+            </a>
+          </div>
+        </div>
+      )}
 
       <footer style={{ padding: "2rem", borderTop: "1px solid #eee", background: "#fff", textAlign: "center", fontSize: 12, color: "#aaa", marginTop: "2rem", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
         <span style={{ maxWidth: 600, textAlign: "center", color: "#bbb", lineHeight: 1.6 }}>Le informazioni contenute in questo sito hanno scopo puramente informativo e non sostituiscono la consulenza medica o farmaceutica professionale. Per diagnosi e terapie rivolgiti sempre a un professionista sanitario.</span>
