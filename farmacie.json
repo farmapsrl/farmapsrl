@@ -377,9 +377,16 @@
     "lng": 9.329435733500011,
     "orarioApertura": { "lun_sab": ["08:30", "12:30", "15:30", "19:30"], "dom": ["08:30", "12:30"] },
     "orari": [["Lun–Sab", "8:30–12:30 / 15:30–19:30"], ["Domenica", "8:30–12:30"]],
+    "cosmetici": [
+      { "brand": "L'Erbolario", "logo": "/cosmetici/logo-lerbolario.png" },
+      { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
+      { "brand": "Dolomia", "logo": "/cosmetici/Dolomia.png" },
+      { "brand": "Rougj", "logo": "/cosmetici/rougj.png" }
+    ],
     "distributoreH24": false,
     "social": { "facebook": "", "instagram": "" },
     "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
       { "nome": "Glicemia" },
       { "nome": "Misurazione Peso Corporeo" },
       { "nome": "Ritiro Referti esami di laboratorio" },
