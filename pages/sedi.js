@@ -78,7 +78,7 @@ export default function Home() {
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "3rem 2rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Gruppo FarmaP</div>
-          <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 16 }}>La farmacia<br /><span style={{ color: "#3B6D11" }}>vicino a te</span></h1>
+          <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 64, fontWeight: 400, lineHeight: 1.1, marginBottom: 16 }}>La farmacia<br /><span style={{ color: "#3B6D11" }}>vicino a te</span></h1>
           <p style={{ fontSize: 16, color: "#666", lineHeight: 1.7, marginBottom: 32, maxWidth: 500 }}>Trova la sede del gruppo FarmaP più comoda per te. Professionisti al tuo servizio ogni giorno.</p>
           <div style={{ position: "relative", maxWidth: 500 }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}>
