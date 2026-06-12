@@ -3,6 +3,22 @@ import dynamic from "next/dynamic";
 import farmacie from "../farmacie.json";
 import Nav from "../components/Nav";
 
+const IcoPin = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 1 }}>
+    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+  </svg>
+);
+const IcoPhone = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.56-1.56a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </svg>
+);
+const IcoClock = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </svg>
+);
+
 const Map = dynamic(() => import("../components/Map"), { ssr: false });
 
 function isAperta(farmacia) {
@@ -104,18 +120,18 @@ export default function Home() {
                     </span>
                   </div>
                   <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                    <span>📍</span><span>{f.indirizzo}</span>
+                    <IcoPin /><span>{f.indirizzo}</span>
                   </div>
                   <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
-                    <span>📞</span><span>{f.telefono}</span>
+                    <IcoPhone /><span>{f.telefono}</span>
                   </div>
                   <div style={{ fontSize: 13, color: "#555", marginBottom: f.distributoreH24 ? 12 : 20, display: "flex", alignItems: "center", gap: 8 }}>
-                    <span>🕐</span>
+                    <IcoClock />
                     <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
                   </div>
                   {f.distributoreH24 && (
-                    <div style={{ fontSize: 11, color: "#3B6D11", background: "#EAF3DE", border: "1px solid #C0DD97", borderRadius: 20, padding: "3px 10px", display: "inline-block", marginBottom: 16 }}>
-                      🕐 Distributore H24
+                    <div style={{ fontSize: 11, color: "#3B6D11", background: "#EAF3DE", border: "1px solid #C0DD97", borderRadius: 20, padding: "3px 10px", display: "inline-flex", alignItems: "center", gap: 5, marginBottom: 16 }}>
+                      <IcoClock /> Distributore H24
                     </div>
                   )}
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #f0f0f0", paddingTop: 14 }}>
@@ -155,13 +171,13 @@ export default function Home() {
                         </span>
                       </div>
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                        <span>📍</span><span>{f.indirizzo}</span>
+                        <IcoPin /><span>{f.indirizzo}</span>
                       </div>
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
-                        <span>📞</span><span>{f.telefono}</span>
+                        <IcoPhone /><span>{f.telefono}</span>
                       </div>
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 20, display: "flex", alignItems: "center", gap: 8 }}>
-                        <span>🕐</span>
+                        <IcoClock />
                         <span>{f.orari && f.orari[0] ? f.orari[0][1] : ""}</span>
                       </div>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #f0f0f0", paddingTop: 14 }}>
@@ -179,19 +195,17 @@ export default function Home() {
                     <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>Il nostro dispensario</div>
                     <div style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
                       <div style={{ marginBottom: 14 }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 3 }}>
-                          <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18 }}>{f.nome}</div>
-                          {f.provincia && (() => { const badge = badgeProvincia(f.provincia); return <span style={{ fontSize: 10, background: badge.bg, color: badge.color, padding: "2px 8px", borderRadius: 20, fontWeight: 500 }}>{f.provincia.toUpperCase()}</span>; })()}
-                        </div>
+                        {f.provincia && (() => { const badge = badgeProvincia(f.provincia); return <div style={{ marginBottom: 6 }}><span style={{ fontSize: 10, background: badge.bg, color: badge.color, padding: "2px 8px", borderRadius: 20, fontWeight: 500 }}>{f.provincia.toUpperCase()}</span></div>; })()}
+                        <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
                         <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
                       </div>
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                        <span>📍</span><span>{f.indirizzo}</span>
+                        <IcoPin /><span>{f.indirizzo}</span>
                       </div>
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 16, display: "flex", flexDirection: "column", gap: 4 }}>
                         {f.orari && f.orari.map(([giorno, ore], i) => (
                           <div key={i} style={{ display: "flex", gap: 8, alignItems: "center" }}>
-                            <span>🕐</span>
+                            <IcoClock />
                             <span style={{ color: "#aaa", minWidth: 140 }}>{giorno}</span>
                             <span>{ore}</span>
                           </div>
