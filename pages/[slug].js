@@ -133,6 +133,11 @@ export default function PaginaFarmacia({ farmacia }) {
               <a href={"https://wa.me/" + waNumero} target="_blank" rel="noreferrer" style={{ fontSize: 13, color: "#25D366", fontWeight: 500, textDecoration: "none" }}>
                 💬 Scrivici su WhatsApp →
               </a>
+              {farmacia.email && (
+                <a href={"mailto:" + farmacia.email} style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500, textDecoration: "none" }}>
+                  ✉ Scrivici per email →
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -159,30 +164,35 @@ export default function PaginaFarmacia({ farmacia }) {
               )}
             </div>
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 28 }}>
-            <a href={"https://www.google.com/maps/search/" + encodeURIComponent(farmacia.indirizzo)} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 22px", borderRadius: 10, fontSize: 14, fontWeight: 600, textDecoration: "none", color: "#fff", background: "#3B6D11", border: "1px solid #3B6D11" }}>
-              📍 Indicazioni
-            </a>
-            <a href={"tel:" + farmacia.telefono} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#333", background: "#fff" }}>
-              📞 Chiama
-            </a>
-            <a href={"https://wa.me/" + waNumero} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #C0DD97", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#25D366", background: "#fff" }}>
-              💬 WhatsApp
-            </a>
-            {farmacia.social && farmacia.social.facebook && (
-              <a href={farmacia.social.facebook} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#1877F2", background: "#fff" }}>
-                Facebook
+              <a href={"https://www.google.com/maps/search/" + encodeURIComponent(farmacia.indirizzo)} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 22px", borderRadius: 10, fontSize: 14, fontWeight: 600, textDecoration: "none", color: "#fff", background: "#3B6D11", border: "1px solid #3B6D11" }}>
+                📍 Indicazioni
               </a>
-            )}
-            {farmacia.social && farmacia.social.instagram && (
-              <a href={farmacia.social.instagram} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#E1306C", background: "#fff" }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                  <circle cx="12" cy="12" r="4"/>
-                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-                </svg>
-                Instagram
+              <a href={"tel:" + farmacia.telefono} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#333", background: "#fff" }}>
+                📞 Chiama
               </a>
-            )}
+              <a href={"https://wa.me/" + waNumero} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #C0DD97", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#25D366", background: "#fff" }}>
+                💬 WhatsApp
+              </a>
+              {farmacia.email && (
+                <a href={"mailto:" + farmacia.email} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#333", background: "#fff" }}>
+                  ✉ Email
+                </a>
+              )}
+              {farmacia.social && farmacia.social.facebook && (
+                <a href={farmacia.social.facebook} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#1877F2", background: "#fff" }}>
+                  Facebook
+                </a>
+              )}
+              {farmacia.social && farmacia.social.instagram && (
+                <a href={farmacia.social.instagram} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#E1306C", background: "#fff" }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                  </svg>
+                  Instagram
+                </a>
+              )}
             </div>
           </div>
           {farmacia.orari && (
@@ -219,7 +229,7 @@ export default function PaginaFarmacia({ farmacia }) {
               </a>
             </div>
           )}
-{(() => {
+          {(() => {
             const dispensario = farmacie.find((f) => f.tipo === "dispensario" && f.farmaciaDiRiferimento === farmacia.slug);
             if (!dispensario) return null;
             return (
@@ -260,11 +270,12 @@ export default function PaginaFarmacia({ farmacia }) {
                           onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.background = "#EEF5E8"; }}
                           onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.background = "#fff"; }}
                           style={{ background: "#fff", border: "1px solid #eee", borderRadius: 14, padding: "1.25rem", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", transition: "border-color 0.15s, background 0.15s" }}
-                        ><div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                           {s.icona && <span style={{ fontSize: 16 }}>{s.icona}</span>}
+                        >
+                          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                            {s.icona && <span style={{ fontSize: 16 }}>{s.icona}</span>}
                             <div style={{ fontSize: 14, fontWeight: 500, color: "#222", lineHeight: 1.4 }}>{s.nome}</div>
-                            </div>
-                            <span style={{ color: "#3B6D11", fontSize: 16, marginLeft: 8, flexShrink: 0 }}>→</span>
+                          </div>
+                          <span style={{ color: "#3B6D11", fontSize: 16, marginLeft: 8, flexShrink: 0 }}>→</span>
                         </div>
                       ))}
                     </div>
@@ -277,14 +288,12 @@ export default function PaginaFarmacia({ farmacia }) {
               Contattaci per informazioni sui servizi disponibili.
             </div>
           )}
-
-
         </div>
       </div>
 
       <footer style={{ padding: "2rem", borderTop: "1px solid #eee", background: "#fff", textAlign: "center", fontSize: 12, color: "#aaa", marginTop: "2rem", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
         <span style={{ maxWidth: 600, textAlign: "center", color: "#bbb", lineHeight: 1.6 }}>Le informazioni contenute in questo sito hanno scopo puramente informativo e non sostituiscono la consulenza medica o farmaceutica professionale. Per diagnosi e terapie rivolgiti sempre a un professionista sanitario.</span>
-<span>© {new Date().getFullYear()} Gruppo FarmaP · Tutti i diritti riservati · <a href="/note-legali" style={{ color: "#aaa", textDecoration: "underline" }}>Note legali</a> · <a href="https://www.iubenda.com/privacy-policy/71842433" target="_blank" rel="noreferrer" style={{ color: "#aaa", textDecoration: "underline" }}>Privacy Policy</a> · <a href="https://www.iubenda.com/privacy-policy/71842433/cookie-policy" target="_blank" rel="noreferrer" style={{ color: "#aaa", textDecoration: "underline" }}>Cookie Policy</a></span>
+        <span>© {new Date().getFullYear()} Gruppo FarmaP · Tutti i diritti riservati · <a href="/note-legali" style={{ color: "#aaa", textDecoration: "underline" }}>Note legali</a> · <a href="https://www.iubenda.com/privacy-policy/71842433" target="_blank" rel="noreferrer" style={{ color: "#aaa", textDecoration: "underline" }}>Privacy Policy</a> · <a href="https://www.iubenda.com/privacy-policy/71842433/cookie-policy" target="_blank" rel="noreferrer" style={{ color: "#aaa", textDecoration: "underline" }}>Cookie Policy</a></span>
         <a href="https://www.linkedin.com/company/farmap-srl/" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "#0A66C2", textDecoration: "none", fontSize: 12, fontWeight: 500 }}>
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
