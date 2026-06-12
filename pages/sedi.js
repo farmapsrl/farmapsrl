@@ -78,15 +78,20 @@ export default function Home() {
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "3rem 2rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Gruppo FarmaP</div>
-          <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 16 }}>La farmacia<br />vicino a te</h1>
+          <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 16 }}>La farmacia<br /><span style={{ color: "#3B6D11" }}>vicino a te</span></h1>
           <p style={{ fontSize: 16, color: "#666", lineHeight: 1.7, marginBottom: 32, maxWidth: 500 }}>Trova la sede del gruppo FarmaP più comoda per te. Professionisti al tuo servizio ogni giorno.</p>
-          <input
-            type="text"
-            placeholder="Cerca per città o nome farmacia..."
-            value={cerca}
-            onChange={(e) => setCerca(e.target.value)}
-            style={{ width: "100%", maxWidth: 500, padding: "12px 20px", border: "1px solid #ddd", borderRadius: 8, fontSize: 15, outline: "none", boxSizing: "border-box" }}
-          />
+          <div style={{ position: "relative", maxWidth: 500 }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}>
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input
+              type="text"
+              placeholder="Cerca per città o nome farmacia..."
+              value={cerca}
+              onChange={(e) => setCerca(e.target.value)}
+              style={{ width: "100%", padding: "12px 20px 12px 44px", border: "1px solid #ddd", borderRadius: 8, fontSize: 15, outline: "none", boxSizing: "border-box" }}
+            />
+          </div>
         </div>
       </div>
 
@@ -115,7 +120,8 @@ export default function Home() {
                       <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
                       <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
                     </div>
-                    <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap" }}>
+                    <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 5 }}>
+                      <span className={isAperta(f) ? "dot-aperta" : "dot-chiusa"} />
                       {isAperta(f) ? "Aperta" : "Chiusa"}
                     </span>
                   </div>
