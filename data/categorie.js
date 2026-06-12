@@ -20,7 +20,7 @@ export const categorie = [
   },
   {
     titolo: "Gestione terapia",
-    servizi: ["Deblistering Farmaci", "Laboratorio Preparazione Galenica"],
+    servizi: ["Deblistering Farmaci", "Laboratorio Preparazione Galenica", "Cannabis Terapeutica"],
   },
   {
     titolo: "Specialisti in sede",
