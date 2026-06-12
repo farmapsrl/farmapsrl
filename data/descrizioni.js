@@ -16,6 +16,7 @@ const descrizioni = {
   "Foratura Lobi": "Eseguita con strumenti sterili monouso e orecchini certificati in acciaio chirurgico.\n\nForniamo le istruzioni per la cura post-foratura. Adatta anche ai bambini con consenso del genitore.",
   "Foratura Lobi e Naso": "Servizio professionale eseguito con strumenti sterili monouso.\n\nOrecchini e piercing certificati in acciaio chirurgico. Forniamo le istruzioni per la cura post-foratura.\n\nAdatto anche ai bambini con consenso del genitore.",
   "Noleggio Ausili e Dispositivi Medici": "Ideale per periodi di convalescenza o esigenze temporanee.",
+  "Noleggio Magnetoterapia": "Il noleggio del dispositivo per magnetoterapia ti permette di effettuare le sedute comodamente a casa, seguendo le indicazioni del tuo medico o fisioterapista.\n\nLa magnetoterapia è utilizzata per favorire la guarigione di fratture, ridurre l'infiammazione e alleviare il dolore articolare e muscolare.\n\nContattaci per informazioni sulla disponibilità, i tempi di noleggio e le tariffe.",
   "Servizi CUP": "Evita la fila e l'attesa agli sportelli.",
   "Consegna a Domicilio": "Farmaci da banco, prodotti parafarmaceutici e articoli sanitari consegnati direttamente a casa tua.\n\n Disponibile nell'area urbana.",
   "Deblistering Farmaci": "Servizio di confezionamento personalizzato dei farmaci in blister monodose.\n\nIdeale per pazienti anziani o con politerapia complessa. \n\n I farmacisti supportano anche nella gestione delle prescrizioni e nei contatti con il medico",
