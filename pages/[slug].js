@@ -111,8 +111,15 @@ export default function PaginaFarmacia({ farmacia }) {
           <div onClick={() => chiudiModal()} style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.4)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem", boxSizing: "border-box" }}>
             <div onClick={(e) => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: "2rem", maxWidth: 520, width: "100%", position: "relative", maxHeight: "90vh", overflowY: "auto" }}>
               <button onClick={() => chiudiModal()} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", cursor: "pointer", color: "#aaa", display: "flex", alignItems: "center", padding: 4 }}><IcoX /></button>
-              <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 1, marginBottom: 10 }}>Servizio</div>
-              <h2 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 22, fontWeight: 400, marginBottom: 16 }}>{modal}</h2>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
+                <div style={{ background: "#EAF3DE", borderRadius: 10, padding: 10, flexShrink: 0 }}>
+                  {icone[modal] || icone["Misurazione Pressione Arteriosa"]}
+                </div>
+                <div>
+                  <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Servizio</div>
+                  <h2 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 20, fontWeight: 400, margin: 0 }}>{modal}</h2>
+                </div>
+              </div>
               <div style={{ marginBottom: 24 }}>
                 {sottoservizi[modal] ? (
                   <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -317,9 +324,9 @@ export default function PaginaFarmacia({ farmacia }) {
                           <div
                             key={i}
                             onClick={() => setModal(s.nome)}
-                            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.background = "#EEF5E8"; }}
-                            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.background = "#fff"; }}
-                            style={{ background: "#fff", border: "1px solid #eee", borderRadius: 14, padding: "1.25rem", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", transition: "border-color 0.15s, background 0.15s" }}
+                            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.background = "#EEF5E8"; e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(59,109,17,0.1)"; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.background = "#fff"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
+                            style={{ background: "#fff", border: "1px solid #eee", borderRadius: 14, padding: "1.25rem", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", transition: "border-color 0.15s, background 0.15s, transform 0.15s, box-shadow 0.15s" }}
                           >
                             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                               <div style={{ width: 36, height: 36, borderRadius: 10, background: "#EAF3DE", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>

@@ -37,6 +37,12 @@ body {
   flex-shrink: 0;
 }
 
+input[type="text"]:focus {
+  border-color: #3B6D11 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(59, 109, 17, 0.1) !important;
+}
+
 /* ─── RESPONSIVE MOBILE ─── */
 
 /* Titoli hero più piccoli su mobile */

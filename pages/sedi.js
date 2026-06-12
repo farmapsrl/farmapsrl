@@ -142,8 +142,10 @@ export default function Home() {
                     </div>
                   )}
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #f0f0f0", paddingTop: 14 }}>
-                    <span style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500 }}>Scopri i nostri servizi</span>
-                    <span style={{ fontSize: 16, color: "#3B6D11" }}>→</span>
+                    <span style={{ fontSize: 11, background: "#EAF3DE", color: "#27500A", padding: "2px 10px", borderRadius: 20 }}>
+                      {f.servizi ? f.servizi.length : 0} servizi
+                    </span>
+                    <span style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500 }}>Scopri →</span>
                   </div>
                 </div>
               );
