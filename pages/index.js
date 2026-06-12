@@ -61,8 +61,8 @@ export default function ChiSiamo() {
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 32 }}>
             {valori.map((v, i) => (
-              <div key={i}>
-                <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 28, fontWeight: 400, color: "#3B6D11", marginBottom: 10 }}>
+              <div key={i} style={{ borderTop: "2px solid #3B6D11", paddingTop: 20 }}>
+                <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 28, fontWeight: 400, color: "#1a1a1a", marginBottom: 10 }}>
                   {v.titolo}
                 </div>
                 <p style={{ fontSize: 14, color: "#666", lineHeight: 1.9, margin: 0 }}>
