@@ -10,9 +10,7 @@
     "telefono": "+39 0382 468934",
     "lat": 45.1949149,
     "lng": 9.1589827,
-    "social": {
-      "instagram": "https://www.instagram.com/farmaciagiardinopavia?igsh=OGRkcGl6eDJ3M2Rw"
-    },
+    "social": { "instagram": "https://www.instagram.com/farmaciagiardinopavia?igsh=OGRkcGl6eDJ3M2Rw" },
     "distributoreH24": true,
     "orarioApertura": { "lun_dom": ["08:00", "20:00"] },
     "orari": [["Lun–Dom", "8:00–20:00"]],
@@ -38,7 +36,8 @@
       { "nome": "Deblistering Farmaci" },
       { "nome": "Servizi CUP" },
       { "nome": "Screening Colon-Retto" },
-      { "nome": "Consegna a Domicilio" }
+      { "nome": "Consegna a Domicilio" },
+      { "nome": "Cannabis Terapeutica" }
     ]
   },
   {
@@ -52,9 +51,7 @@
     "telefono": "+39 0382 460235",
     "lat": 45.18177855239253,
     "lng": 9.168821769024834,
-    "social": {
-      "instagram": "https://www.instagram.com/farmaciasantateresapavia?igsh=bDB6NWpoeG12Nnkz"
-    },
+    "social": { "instagram": "https://www.instagram.com/farmaciasantateresapavia?igsh=bDB6NWpoeG12Nnkz" },
     "cosmetici": [
       { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
       { "brand": "Ceramol", "logo": "/cosmetici/ceramol.png" },
@@ -95,9 +92,7 @@
     "telefono": "+39 0382 970602",
     "lat": 45.15938772004701,
     "lng": 9.315913481745584,
-    "social": {
-      "instagram": "https://www.instagram.com/farmaciamicabelgioioso?igsh=NHJ0bGRkYmdkdzlp"
-    },
+    "social": { "instagram": "https://www.instagram.com/farmaciamicabelgioioso?igsh=NHJ0bGRkYmdkdzlp" },
     "distributoreH24": true,
     "cosmetici": [
       { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
@@ -212,9 +207,7 @@
     "telefono": "+39 0523 321662",
     "lat": 45.05375998515989,
     "lng": 9.695208943122688,
-    "social": {
-      "instagram": "https://www.instagram.com/farmaciapiusanlazzaro?igsh=bnd3bDdiOXpjNG94"
-    },
+    "social": { "instagram": "https://www.instagram.com/farmaciapiusanlazzaro?igsh=bnd3bDdiOXpjNG94" },
     "distributoreH24": true,
     "cosmetici": [
       { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" },
@@ -258,9 +251,7 @@
     "telefono": "+39 0523 614842",
     "lat": 45.03851170309954,
     "lng": 9.721599541267311,
-    "social": {
-      "instagram": "https://www.instagram.com/farmaciapiusanlazzaro?igsh=bnd3bDdiOXpjNG94"
-    },
+    "social": { "instagram": "https://www.instagram.com/farmaciapiusanlazzaro?igsh=bnd3bDdiOXpjNG94" },
     "distributoreH24": true,
     "cosmetici": [
       { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" },
@@ -308,9 +299,7 @@
     "telefono": "+39 0523 691752",
     "lat": 44.95597760874076,
     "lng": 9.864567497081723,
-    "social": {
-      "instagram": "https://www.instagram.com/farmaciaemilia_fontanafreddapc?igsh=MWhscjkzb3Rva2h5Ng=="
-    },
+    "social": { "instagram": "https://www.instagram.com/farmaciaemilia_fontanafreddapc?igsh=MWhscjkzb3Rva2h5Ng==" },
     "distributoreH24": true,
     "cosmetici": [
       { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
@@ -351,9 +340,7 @@
     "telefono": "+39 0382 25460",
     "lat": 45.18881265346124,
     "lng": 9.144692268256135,
-    "social": {
-      "instagram": "https://www.instagram.com/farmastazione.pavia?igsh=MXZtNzZuZzgxcTZ2ag=="
-    },
+    "social": { "instagram": "https://www.instagram.com/farmastazione.pavia?igsh=MXZtNzZuZzgxcTZ2ag==" },
     "cosmetici": [
       { "brand": "Eucerin", "logo": "/cosmetici/eucerin.png" },
       { "brand": "Rilastil", "logo": "/cosmetici/rilastil.png" },
