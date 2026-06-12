@@ -197,7 +197,8 @@
       { "nome": "Ferritina" },
       { "nome": "INR" },
       { "nome": "Test di Gravidanza" },
-      { "nome": "Esame delle Urine" }
+      { "nome": "Esame delle Urine" },
+      { "nome": "Deblistering Farmaci" }
     ]
   },
   {
@@ -382,7 +383,8 @@
     "servizi": [
       { "nome": "Ritiro Referti esami di laboratorio" },
       { "nome": "Screening Colon-Retto" },
-      { "nome": "Attivazione e Assistenza SPID" }
+      { "nome": "Attivazione e Assistenza SPID" },
+      { "nome": "Deblistering Farmaci" }
     ]
   },
   {
