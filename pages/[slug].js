@@ -301,7 +301,7 @@ export default function PaginaFarmacia({ farmacia }) {
               </p>
             </div>
             
-              href={"mailto:" + farmacia.email + "?subject=Candidatura - " + farmacia.nome + "&body=Gentile team di " + farmacia.nome + ",%0D%0A%0D%0AVi invio la mia candidatura spontanea.%0D%0A%0D%0AIn allegato trovate il mio CV.%0D%0A%0D%0ACordiali saluti"}
+             <a href={"mailto:" + farmacia.email + "?subject=Candidatura%20-%20" + encodeURIComponent(farmacia.nome) + "&body=Gentile%20team%2C%0D%0A%0D%0AVi%20invio%20la%20mia%20candidatura%20spontanea.%0D%0A%0D%0AIn%20allegato%20trovate%20il%20mio%20CV.%0D%0A%0D%0ACordiali%20saluti"}
               style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 28px", background: "#3B6D11", color: "#fff", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}
             >
               ✉ Invia il tuo CV
