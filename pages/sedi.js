@@ -101,9 +101,9 @@ export default function Home() {
                 <div
                   key={f.slug}
                   onClick={() => { window.location.href = "/" + f.slug; }}
-                  style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.15)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.05)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                  style={{ border: "1px solid #eee", borderTop: "3px solid #3B6D11", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.15)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.05)"; e.currentTarget.style.transform = "translateY(0)"; }}
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
                     <div>
@@ -152,9 +152,9 @@ export default function Home() {
                     <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>La nostra parafarmacia</div>
                     <div
                       onClick={() => { window.location.href = "/" + f.slug; }}
-                      style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}
-                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.15)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.05)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                      style={{ border: "1px solid #eee", borderTop: "3px solid #3B6D11", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "box-shadow 0.2s, transform 0.2s" }}
+                      onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.15)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.05)"; e.currentTarget.style.transform = "translateY(0)"; }}
                     >
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 }}>
                         <div>

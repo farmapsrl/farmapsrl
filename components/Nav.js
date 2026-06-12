@@ -37,6 +37,9 @@ export default function Nav() {
         justifyContent: "space-between",
         alignItems: "center",
         background: "#fff",
+        position: "sticky",
+        top: 0,
+        zIndex: 50,
       }}
     >
       <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
