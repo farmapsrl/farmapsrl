@@ -5,6 +5,37 @@ import Nav from "../components/Nav";
 import descrizioni, { sottoservizi, descrizioniRegionali } from "../data/descrizioni";
 import { categorie, normalizza } from "../data/categorie";
 
+const IcoPin = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+  </svg>
+);
+const IcoPhone = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.56-1.56a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </svg>
+);
+const IcoClock = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </svg>
+);
+const IcoMail = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+  </svg>
+);
+const IcoChat = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+);
+const IcoX = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+);
+
 function isAperta(farmacia) {
   const ora = new Date();
   const giorno = ora.getDay();
@@ -77,7 +108,7 @@ export default function PaginaFarmacia({ farmacia }) {
         {modal && (
           <div onClick={() => chiudiModal()} style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.4)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem", boxSizing: "border-box" }}>
             <div onClick={(e) => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: "2rem", maxWidth: 520, width: "100%", position: "relative", maxHeight: "90vh", overflowY: "auto" }}>
-              <button onClick={() => chiudiModal()} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", fontSize: 20, cursor: "pointer", color: "#aaa" }}>✕</button>
+              <button onClick={() => chiudiModal()} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", cursor: "pointer", color: "#aaa", display: "flex", alignItems: "center", padding: 4 }}><IcoX /></button>
               <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 1, marginBottom: 10 }}>Servizio</div>
               <h2 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 22, fontWeight: 400, marginBottom: 16 }}>{modal}</h2>
               <div style={{ marginBottom: 24 }}>
@@ -145,15 +176,15 @@ export default function PaginaFarmacia({ farmacia }) {
                 Le informazioni su questo servizio hanno scopo puramente informativo e non sostituiscono il parere del medico o del farmacista.
               </div>
               <div style={{ borderTop: "1px solid #eee", paddingTop: 16, display: "flex", flexDirection: "column", gap: 12 }}>
-                <a href={"tel:" + farmacia.telefono} style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500, textDecoration: "none" }}>
-                  📞 Chiama per informazioni →
+                <a href={"tel:" + farmacia.telefono} style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500, textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
+                  <IcoPhone /> Chiama per informazioni →
                 </a>
-                <a href={"https://wa.me/" + waNumero} target="_blank" rel="noreferrer" style={{ fontSize: 13, color: "#25D366", fontWeight: 500, textDecoration: "none" }}>
-                  💬 Scrivici su WhatsApp →
+                <a href={"https://wa.me/" + waNumero} target="_blank" rel="noreferrer" style={{ fontSize: 13, color: "#25D366", fontWeight: 500, textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
+                  <IcoChat /> Scrivici su WhatsApp →
                 </a>
                 {farmacia.email && (
-                  <a href={"mailto:" + farmacia.email} style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500, textDecoration: "none" }}>
-                    ✉ Scrivici per email →
+                  <a href={"mailto:" + farmacia.email} style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500, textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
+                    <IcoMail /> Scrivici per email →
                   </a>
                 )}
               </div>
@@ -170,31 +201,31 @@ export default function PaginaFarmacia({ farmacia }) {
               <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 52, fontWeight: 400, marginBottom: 12, lineHeight: 1.1 }}>{farmacia.nome}</h1>
               <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 20 }}>
                 <a href={"https://www.google.com/maps/search/" + encodeURIComponent(farmacia.indirizzo)} target="_blank" rel="noreferrer" style={{ fontSize: 13, color: "#888", textDecoration: "none", display: "flex", alignItems: "center", gap: 5 }}>
-                  📍 <span style={{ borderBottom: "1px solid #ddd" }}>{farmacia.indirizzo}</span>
+                  <IcoPin /> <span style={{ borderBottom: "1px solid #ddd" }}>{farmacia.indirizzo}</span>
                 </a>
                 <span style={{ fontSize: 12, padding: "4px 12px", borderRadius: 20, background: aperta ? "#EAF3DE" : "#f5f5f5", color: aperta ? "#3B6D11" : "#888", border: "1px solid " + (aperta ? "#C0DD97" : "#ddd"), display: "inline-flex", alignItems: "center", gap: 5 }}>
                   <span className={aperta ? "dot-aperta" : "dot-chiusa"} />
                   {aperta ? "Aperta ora" : "Chiusa"}
                 </span>
                 {farmacia.distributoreH24 && (
-                  <span style={{ fontSize: 12, padding: "4px 12px", borderRadius: 20, background: "#EAF3DE", color: "#3B6D11", border: "1px solid #C0DD97" }}>
-                    🕐 Distributore H24
+                  <span style={{ fontSize: 12, padding: "4px 12px", borderRadius: 20, background: "#EAF3DE", color: "#3B6D11", border: "1px solid #C0DD97", display: "inline-flex", alignItems: "center", gap: 5 }}>
+                    <IcoClock /> Distributore H24
                   </span>
                 )}
               </div>
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 28 }}>
                 <a href={"https://www.google.com/maps/search/" + encodeURIComponent(farmacia.indirizzo)} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 22px", borderRadius: 10, fontSize: 14, fontWeight: 600, textDecoration: "none", color: "#fff", background: "#3B6D11", border: "1px solid #3B6D11" }}>
-                  📍 Indicazioni
+                  <IcoPin size={15} /> Indicazioni
                 </a>
                 <a href={"tel:" + farmacia.telefono} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#333", background: "#fff" }}>
-                  📞 Chiama
+                  <IcoPhone size={15} /> Chiama
                 </a>
                 <a href={"https://wa.me/" + waNumero} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #C0DD97", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#25D366", background: "#fff" }}>
-                  💬 WhatsApp
+                  <IcoChat size={15} /> WhatsApp
                 </a>
                 {farmacia.email && (
                   <a href={"mailto:" + farmacia.email} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#333", background: "#fff" }}>
-                    ✉ Email
+                    <IcoMail size={15} /> Email
                   </a>
                 )}
                 {farmacia.social && farmacia.social.facebook && (
@@ -255,16 +286,16 @@ export default function PaginaFarmacia({ farmacia }) {
                   <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>Gestiamo anche</div>
                   <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, fontWeight: 400, marginBottom: 8, color: "#1a1a1a" }}>{dispensario.nome}</div>
                   <div style={{ fontSize: 13, color: "#555", marginBottom: 6, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                    <span>📍</span><span>{dispensario.indirizzo}</span>
+                    <IcoPin /><span>{dispensario.indirizzo}</span>
                   </div>
                   {dispensario.telefono && dispensario.telefono !== "+39 0000 000000" && (
                     <div style={{ fontSize: 13, color: "#555", marginBottom: 6, display: "flex", alignItems: "center", gap: 8 }}>
-                      <span>📞</span><span>{dispensario.telefono}</span>
+                      <IcoPhone /><span>{dispensario.telefono}</span>
                     </div>
                   )}
                   {dispensario.orari && dispensario.orari.length > 0 && (
                     <div style={{ fontSize: 13, color: "#555", display: "flex", alignItems: "center", gap: 8 }}>
-                      <span>🕐</span><span>{dispensario.orari[0][1]}</span>
+                      <IcoClock /><span>{dispensario.orari[0][1]}</span>
                     </div>
                   )}
                 </div>
@@ -323,7 +354,7 @@ export default function PaginaFarmacia({ farmacia }) {
                 <a href={"mailto:" + farmacia.email + "?subject=Candidatura%20-%20" + encodeURIComponent(farmacia.nome) + "&body=Gentile%20team%2C%0D%0A%0D%0AVi%20invio%20la%20mia%20candidatura%20spontanea.%0D%0A%0D%0AIn%20allegato%20trovate%20il%20mio%20CV.%0D%0A%0D%0ACordiali%20saluti"}
                 style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "14px 28px", background: "#3B6D11", color: "#fff", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", whiteSpace: "nowrap" }}
               >
-                ✉ Invia il tuo CV
+                <IcoMail size={15} /> Invia il tuo CV
               </a>
             </div>
           </div>
