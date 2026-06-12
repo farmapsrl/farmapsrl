@@ -313,9 +313,9 @@ export default function PaginaFarmacia({ farmacia }) {
             <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
               <div>
                 <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>Lavora con noi</div>
-                <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 22, fontWeight: 400, color: "#1a1a1a", marginBottom: 8 }}>Cerchiamo persone appassionate</div>
+                <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 22, fontWeight: 400, color: "#1a1a1a", marginBottom: 8 }}>Siamo sempre alla ricerca di nuove figure!</div>
                 <p style={{ fontSize: 14, color: "#666", lineHeight: 1.7, margin: 0, maxWidth: 480 }}>
-                  Siamo sempre alla ricerca di nuove figure! Inviaci la tua candidatura e conosciamoci.
+                   Inviaci la tua candidatura e conosciamoci.
                 </p>
               </div>
               
