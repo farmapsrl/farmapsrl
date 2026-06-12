@@ -18,7 +18,7 @@ const descrizioni = {
   "Noleggio Ausili e Dispositivi Medici": "Ideale per periodi di convalescenza o esigenze temporanee.",
   "Noleggio Magnetoterapia": "Il noleggio del dispositivo per magnetoterapia ti permette di effettuare le sedute comodamente a casa, seguendo le indicazioni del tuo medico o fisioterapista.\n\nLa magnetoterapia è utilizzata per favorire la guarigione di fratture, ridurre l'infiammazione e alleviare il dolore articolare e muscolare.\n\nContattaci per informazioni sulla disponibilità, i tempi di noleggio e le tariffe.",
   "Servizi CUP": "Evita la fila e l'attesa agli sportelli.",
-  "Consegna a Domicilio": "Farmaci da banco, prodotti parafarmaceutici e articoli sanitari consegnati direttamente a casa tua.\n\n Disponibile nell'area urbana.",
+  "Consegna a Domicilio": "Prenota tutto quello di cui necessiti dalla farmacia per riceverlo comodamente a casa tua. \n\n Contattaci per informazioni e modalità.",
   "Deblistering Farmaci": "Servizio di confezionamento personalizzato dei farmaci in blister monodose.\n\nIdeale per pazienti anziani o con politerapia complessa. \n\n I farmacisti supportano anche nella gestione delle prescrizioni e nei contatti con il medico",
   "Attivazione e Assistenza SPID": "Attivazione dello SPID direttamente in farmacia in pochi minuti.\n\nSenza code agli uffici pubblici. \n\n Il servizio è gratuito e il paziente può recarsi in farmacia in caso di necessità di assistenza post rilascio (es. cambio/recupero password o cambio di documenti d'identità).\n\n Porta con te documento d'identità e codice fiscale.",
   "Pagamento Ticket": "Paga il ticket sanitario direttamente in farmacia sia in contanti che con bancomat portando il bollettino PagoPA.\n\nRapido e comodo, senza doverti recare agli sportelli.",
