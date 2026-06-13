@@ -26,12 +26,16 @@ export default function ChiSiamo() {
       <Nav />
 
       <div style={{ background: "#fff", padding: "4rem 2rem" }}>
-        <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <img src="/LogoFarmaP.png" alt="Gruppo FarmaP" style={{ height: 72, width: "auto", marginBottom: 32, display: "block" }} />
-          <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 20 }}>
-            La salute<br />vicino a te, ogni giorno.
-          </h1>
-          <p style={{ fontSize: 16, color: "#666", lineHeight: 1.8, maxWidth: 540 }}></p>
+        <div style={{ maxWidth: 960, margin: "0 auto", display: "flex", alignItems: "center", gap: 64 }}>
+          <div style={{ flexShrink: 0 }}>
+            <img src="/LogoFarmaP.png" alt="Gruppo FarmaP" style={{ height: 120, width: "auto", display: "block" }} />
+          </div>
+          <div>
+            <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 20 }}>
+              La salute<br />vicino a te, ogni giorno.
+            </h1>
+            <p style={{ fontSize: 16, color: "#666", lineHeight: 1.8, maxWidth: 540 }}></p>
+          </div>
         </div>
       </div>
 
