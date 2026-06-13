@@ -98,7 +98,7 @@ export default function Servizi() {
           <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Gruppo FarmaP</div>
           <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 16 }}>I nostri servizi</h1>
           <p style={{ fontSize: 16, color: "#666", lineHeight: 1.8, maxWidth: 500 }}>
-            Oltre alla dispensazione dei farmaci, le nostre sedi offrono una serie di servizi sanitari e pratici. Clicca su un servizio per scoprire dove è disponibile.
+            La farmacia è il primo punto di contatto con il sistema sanitario. Ci impegniamo a rendere accessibili esami, analisi e prestazioni che spesso richiedono lunghe attese o spostamenti — vicino a casa, senza appuntamento.
           </p>
         </div>
       </div>
