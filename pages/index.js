@@ -30,7 +30,7 @@ export default function ChiSiamo() {
           <img
             src="/LogoFarmaP.png"
             alt="Gruppo FarmaP"
-            style={{ position: "absolute", right: "calc(100% + 48px)", top: "50%", transform: "translateY(-50%)", height: 160, width: "auto" }}
+            style={{ position: "absolute", right: "calc(100% + 48px)", top: "50%", transform: "translateY(-50%)", height: 190, width: "auto" }}
           />
           <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, margin: 0 }}>
             La salute<br />vicino a te, ogni giorno.
