@@ -28,13 +28,12 @@ export default function ChiSiamo() {
       <div style={{ background: "#fff", padding: "4rem 2rem" }}>
         <div style={{ maxWidth: 960, margin: "0 auto", display: "flex", alignItems: "center", gap: 64 }}>
           <div style={{ flexShrink: 0 }}>
-            <img src="/LogoFarmaP.png" alt="Gruppo FarmaP" style={{ height: 120, width: "auto", display: "block" }} />
+            <img src="/LogoFarmaP.png" alt="Gruppo FarmaP" style={{ height: 160, width: "auto", display: "block" }} />
           </div>
-          <div>
-            <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 20 }}>
+          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, margin: 0 }}>
               La salute<br />vicino a te, ogni giorno.
             </h1>
-            <p style={{ fontSize: 16, color: "#666", lineHeight: 1.8, maxWidth: 540 }}></p>
           </div>
         </div>
       </div>
