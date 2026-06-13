@@ -27,9 +27,7 @@ export default function ChiSiamo() {
 
       <div style={{ background: "#fff", padding: "4rem 2rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
-            Gruppo FarmaP
-          </div>
+          <img src="/LogoFarmaP.png" alt="Gruppo FarmaP" style={{ height: 72, width: "auto", marginBottom: 32, display: "block" }} />
           <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 20 }}>
             La salute<br />vicino a te, ogni giorno.
           </h1>
