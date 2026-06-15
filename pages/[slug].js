@@ -38,6 +38,22 @@ const IcoX = () => (
   </svg>
 );
 
+function buildOpeningHours(oa) {
+  if (!oa) return [];
+  const dayMap = { lun_ven: "Mo-Fr", lun_sab: "Mo-Sa", lun_dom: "Mo-Su", sab: "Sa", dom: "Su" };
+  const result = [];
+  for (const [key, times] of Object.entries(oa)) {
+    if (!times || !dayMap[key]) continue;
+    const days = dayMap[key];
+    if (times.length === 2) result.push(`${days} ${times[0]}-${times[1]}`);
+    else if (times.length === 4) {
+      result.push(`${days} ${times[0]}-${times[1]}`);
+      result.push(`${days} ${times[2]}-${times[3]}`);
+    }
+  }
+  return result;
+}
+
 function isAperta(farmacia) {
   const ora = new Date();
   const giorno = ora.getDay();
@@ -103,6 +119,26 @@ export default function PaginaFarmacia({ farmacia }) {
         <meta property="og:description" content={descrizione} />
         <meta property="og:type" content="local.business" />
         <meta name="robots" content="index, follow" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Pharmacy",
+              "name": farmacia.nome,
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": farmacia.indirizzo.split(", ").slice(1, -1).join(", "),
+                "addressLocality": farmacia.citta,
+                "addressRegion": farmacia.provincia,
+                "addressCountry": "IT"
+              },
+              "telephone": farmacia.telefono,
+              "openingHours": buildOpeningHours(farmacia.orarioApertura),
+              "url": `https://farmap.it/farmacie/${farmacia.slug}`
+            })
+          }}
+        />
       </Head>
 
       <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
