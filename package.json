@@ -16,6 +16,13 @@
     "react-dom": "19.2.4",
     "react-leaflet": "^5.0.0"
   },
+  "browserslist": [
+    "chrome >= 80",
+    "edge >= 80",
+    "firefox >= 74",
+    "safari >= 13.1",
+    "not IE 11"
+  ],
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "eslint": "^9",
