@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -18,7 +19,12 @@ export default function Servizi() {
     );
 
   return (
-    <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+    <>
+      <Head>
+        <title>Servizi | Gruppo FarmaP</title>
+        <meta name="description" content="Scopri tutti i servizi offerti dalle farmacie del Gruppo FarmaP: analisi, esami, vaccinazioni, servizi al cittadino e molto altro." />
+      </Head>
+      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
 
       {modal && (
         <div onClick={() => chiudiModal()} style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.4)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem", boxSizing: "border-box" }}>
@@ -153,5 +159,6 @@ export default function Servizi() {
 
       <Footer />
     </div>
+    </>
   );
 }

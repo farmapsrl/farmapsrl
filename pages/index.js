@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
@@ -22,7 +23,12 @@ const valori = [
 
 export default function ChiSiamo() {
   return (
-    <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+    <>
+      <Head>
+        <title>Chi siamo | Gruppo FarmaP</title>
+        <meta name="description" content="Il Gruppo FarmaP è una rete di farmacie di prossimità in Emilia-Romagna e Lombardia. Scopri la nostra storia, i nostri valori e le nostre sedi." />
+      </Head>
+      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
 
       <div style={{ background: "#fff", padding: "4rem 2rem" }}>
@@ -91,5 +97,6 @@ export default function ChiSiamo() {
 
       <Footer />
     </div>
+    </>
   );
 }

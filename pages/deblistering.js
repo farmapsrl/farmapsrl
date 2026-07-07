@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -76,7 +77,12 @@ export default function Deblistering() {
   const cat = categorie.find((c) => c.id === tabAttiva);
 
   return (
-    <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+    <>
+      <Head>
+        <title>Deblistering | Gruppo FarmaP</title>
+        <meta name="description" content="Il servizio di deblistering del Gruppo FarmaP organizza i tuoi farmaci in blister settimanali personalizzati, per non dimenticare mai una dose." />
+      </Head>
+      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
 
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "4rem 2rem" }}>
@@ -282,5 +288,6 @@ export default function Deblistering() {
       </div>
       <Footer />
     </div>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
 return (
-<Html lang="en">
+<Html lang="it">
 <Head>
 <meta name="color-scheme" content="light only" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

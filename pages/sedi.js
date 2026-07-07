@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import farmacie from "../farmacie.json";
@@ -72,7 +73,12 @@ export default function Home() {
   const dispensariLista = filtra("dispensario");
 
   return (
-    <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+    <>
+      <Head>
+        <title>Le nostre sedi | Gruppo FarmaP</title>
+        <meta name="description" content="Trova la farmacia FarmaP più vicina a te. Orari, servizi e contatti di tutte le nostre sedi in Emilia-Romagna e Lombardia." />
+      </Head>
+      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
 
       <Nav />
 
@@ -247,5 +253,6 @@ export default function Home() {
       <Footer />
 
     </div>
+    </>
   );
 }

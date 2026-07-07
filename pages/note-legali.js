@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
@@ -13,7 +14,12 @@ const voci = [
 
 export default function NoteLegali() {
   return (
-    <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+    <>
+      <Head>
+        <title>Note legali | Gruppo FarmaP</title>
+        <meta name="description" content="Note legali, dati societari e informazioni sulla proprietà intellettuale del Gruppo FarmaP." />
+      </Head>
+      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
 
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "3rem 2rem" }}>
@@ -78,5 +84,6 @@ export default function NoteLegali() {
 
       <Footer />
     </div>
+    </>
   );
 }
