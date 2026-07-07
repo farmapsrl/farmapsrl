@@ -84,7 +84,7 @@ export default function Deblistering() {
       </Head>
       <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
-
+      <main>
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "4rem 2rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 32, flexWrap: "wrap" }}>
           <div>
@@ -286,6 +286,7 @@ export default function Deblistering() {
           </a>
         </div>
       </div>
+      </main>
       <Footer />
     </div>
     </>

@@ -4,10 +4,10 @@ export default function Footer() {
       <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 24 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           <span style={{ fontSize: 12, color: "#3B6D11", fontWeight: 600, letterSpacing: 0.5 }}>Gruppo FarmaP</span>
-          <span style={{ fontSize: 11, color: "#bbb", lineHeight: 1.7, maxWidth: 480 }}>
+          <span style={{ fontSize: 11, color: "#767676", lineHeight: 1.7, maxWidth: 480 }}>
             Le informazioni contenute in questo sito hanno scopo puramente informativo e non sostituiscono la consulenza medica o farmaceutica professionale. Per diagnosi e terapie rivolgiti sempre a un professionista sanitario.
           </span>
-          <span style={{ fontSize: 11, color: "#ccc", marginTop: 4 }}>
+          <span style={{ fontSize: 11, color: "#767676", marginTop: 4 }}>
             © {new Date().getFullYear()} Gruppo FarmaP · Tutti i diritti riservati
           </span>
         </div>
@@ -19,9 +19,9 @@ export default function Footer() {
             LinkedIn
           </a>
           <div style={{ display: "flex", gap: 16, fontSize: 11 }}>
-            <a href="/note-legali" style={{ color: "#bbb", textDecoration: "none" }}>Note legali</a>
-            <a href="https://www.iubenda.com/privacy-policy/71842433" target="_blank" rel="noreferrer" style={{ color: "#bbb", textDecoration: "none" }}>Privacy Policy</a>
-            <a href="https://www.iubenda.com/privacy-policy/71842433/cookie-policy" target="_blank" rel="noreferrer" style={{ color: "#bbb", textDecoration: "none" }}>Cookie Policy</a>
+            <a href="/note-legali" style={{ color: "#767676", textDecoration: "none" }}>Note legali</a>
+            <a href="https://www.iubenda.com/privacy-policy/71842433" target="_blank" rel="noreferrer" style={{ color: "#767676", textDecoration: "none" }}>Privacy Policy</a>
+            <a href="https://www.iubenda.com/privacy-policy/71842433/cookie-policy" target="_blank" rel="noreferrer" style={{ color: "#767676", textDecoration: "none" }}>Cookie Policy</a>
           </div>
         </div>
       </div>

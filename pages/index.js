@@ -30,7 +30,7 @@ export default function ChiSiamo() {
       </Head>
       <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
-
+      <main>
       <div style={{ background: "#fff", padding: "4rem 2rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative" }}>
           <img
@@ -46,7 +46,7 @@ export default function ChiSiamo() {
 
       <div style={{ padding: "3rem 2rem", background: "#f7f7f5" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div style={{ fontSize: 11, color: "#aaa", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20 }}>
+          <div style={{ fontSize: 11, color: "#767676", textTransform: "uppercase", letterSpacing: 1, marginBottom: 20 }}>
             Il nostro approccio
           </div>
           <p style={{ fontSize: 15, color: "#444", lineHeight: 1.9, marginBottom: 16 }}>
@@ -63,7 +63,7 @@ export default function ChiSiamo() {
 
       <div style={{ padding: "3rem 2rem", background: "#fff" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div style={{ fontSize: 11, color: "#aaa", textTransform: "uppercase", letterSpacing: 1, marginBottom: 32 }}>
+          <div style={{ fontSize: 11, color: "#767676", textTransform: "uppercase", letterSpacing: 1, marginBottom: 32 }}>
             I nostri valori
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 32 }}>
@@ -95,6 +95,7 @@ export default function ChiSiamo() {
         </div>
       </div>
 
+      </main>
       <Footer />
     </div>
     </>

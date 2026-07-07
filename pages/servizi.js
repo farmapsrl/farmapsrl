@@ -98,7 +98,7 @@ export default function Servizi() {
       )}
 
       <Nav />
-
+      <main>
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "3rem 2rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Gruppo FarmaP</div>
@@ -157,6 +157,7 @@ export default function Servizi() {
         </div>
       </div>
 
+      </main>
       <Footer />
     </div>
     </>

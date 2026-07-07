@@ -21,7 +21,7 @@ export default function NoteLegali() {
       </Head>
       <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
-
+      <main>
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "3rem 2rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <a href="/" style={{ fontSize: 13, color: "#3B6D11", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 24 }}>
@@ -82,6 +82,7 @@ export default function NoteLegali() {
         </div>
       </div>
 
+      </main>
       <Footer />
     </div>
     </>

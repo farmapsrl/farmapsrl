@@ -238,7 +238,7 @@ export default function PaginaFarmacia({ farmacia }) {
         )}
 
         <Nav />
-
+        <main>
         <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "2.5rem 2rem 4rem" }}>
           <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 48, alignItems: "flex-start", flexWrap: "wrap" }}>
             <div style={{ flex: 1, minWidth: 280 }}>
@@ -406,6 +406,7 @@ export default function PaginaFarmacia({ farmacia }) {
           </div>
         )}
 
+        </main>
         <Footer />
 
       </div>
