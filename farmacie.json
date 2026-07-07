@@ -194,15 +194,10 @@
       { "nome": "Noleggio Ausili e Dispositivi Medici", "dettagli": ["Carrozzina", "Girello", "Stampelle", "Sedia comoda da bagno", "Tiralatte"] },
       { "nome": "Glicemia" },
       { "nome": "Profilo Lipidico Completo" },
-      { "nome": "Emoglobina Glicata" },
       { "nome": "Dosaggio Vitamina D" },
       { "nome": "PSA" },
-      { "nome": "TSH" },
       { "nome": "Proteina C Reattiva (PCR)" },
-      { "nome": "Ferritina" },
       { "nome": "INR" },
-      { "nome": "Test di Gravidanza" },
-      { "nome": "Esame delle Urine" },
       { "nome": "Deblistering Farmaci" }
     ]
   },
