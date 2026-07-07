@@ -6,7 +6,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap";
+    link.href = "https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=optional";
     document.head.appendChild(link);
   }, []);
 
