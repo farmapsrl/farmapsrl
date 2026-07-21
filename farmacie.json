@@ -201,7 +201,7 @@
       { "nome": "Deblistering Farmaci" }
     ]
   },
-  {
+    {
     "slug": "farmacia-piu",
     "tipo": "farmacia",
     "nome": "Farmacia Più",
@@ -210,6 +210,7 @@
     "regione": "Emilia-Romagna",
     "indirizzo": "Farmacia Più, Via Cavour 37, 29121 Piacenza",
     "telefono": "+39 0523 321662",
+    "whatsapp": "+393886967740",
     "email": "info@farmaciapiu.com",
     "lat": 45.05375998515989,
     "lng": 9.695208943122688,
@@ -245,7 +246,7 @@
       { "nome": "Screening Colon-Retto" },
       { "nome": "Noleggio Magnetoterapia" }
     ]
-  },
+  }, 
   {
     "slug": "farmacia-san-lazzaro",
     "tipo": "farmacia",

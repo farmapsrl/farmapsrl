@@ -101,8 +101,7 @@ export default function PaginaFarmacia({ farmacia }) {
   const altre = modal
     ? farmacie.filter((f) => f.slug !== farmacia.slug && f.servizi && f.servizi.some((s) => s.nome === modal))
     : [];
-  const waNumero = farmacia.telefono.replace(/\s+/g, "").replace("+", "");
-
+const waNumero = (farmacia.whatsapp || farmacia.telefono).replace(/\s+/g, "").replace("+", "");
   const nomeServizi = farmacia.servizi && farmacia.servizi.length > 0
     ? farmacia.servizi.slice(0, 3).map(s => s.nome).join(", ")
     : "farmaci e prodotti sanitari";
