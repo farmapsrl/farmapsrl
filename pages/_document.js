@@ -8,6 +8,17 @@ return (
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=optional" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLLN93DD1F" />
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RLLN93DD1F');
+    `,
+  }}
+/>
 <style dangerouslySetInnerHTML={{__html: `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #fff; color: #171717; font-family: 'Lexend', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
