@@ -8,6 +8,7 @@ return (
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=optional" />
+<script type="text/javascript" src="https://embeds.iubenda.com/widgets/5911346e-57ea-4b41-84fc-510ccd28ac64.js" />
 <script
   dangerouslySetInnerHTML={{
     __html: `
@@ -32,7 +33,6 @@ return (
     `,
   }}
 />
-<script type="text/javascript" src="https://embeds.iubenda.com/widgets/5911346e-57ea-4b41-84fc-510ccd28ac64.js" />
 <style dangerouslySetInnerHTML={{__html: `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: #fff; color: #171717; font-family: 'Lexend', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
