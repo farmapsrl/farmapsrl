@@ -99,9 +99,8 @@ export default function PaginaFarmacia({ farmacia }) {
   const [sottoAperto, setSottoAperto] = useState(null);
   const chiudiModal = () => { setModal(null); setSottoAperto(null); };
   useEffect(() => { setMounted(true); }, []);
-  if (!mounted) return null;
 
-  const aperta = isAperta(farmacia);
+  const aperta = mounted ? isAperta(farmacia) : false;
   const haServizi = farmacia.servizi && farmacia.servizi.length > 0;
   const servizioCorrente = modal ? farmacia.servizi.find((s) => s.nome === modal) : null;
   const altre = modal
@@ -253,10 +252,12 @@ export default function PaginaFarmacia({ farmacia }) {
                   <a href={"https://www.google.com/maps/search/" + encodeURIComponent(farmacia.indirizzo)} target="_blank" rel="noreferrer" style={{ fontSize: 13, color: "#888", textDecoration: "none", display: "flex", alignItems: "center", gap: 5 }}>
                     <IcoPin /> <span style={{ borderBottom: "1px solid #ddd" }}>{farmacia.indirizzo}</span>
                   </a>
-                  <span style={{ fontSize: 12, padding: "4px 12px", borderRadius: 20, background: aperta ? "#EAF3DE" : "#f5f5f5", color: aperta ? "#3B6D11" : "#888", border: "1px solid " + (aperta ? "#C0DD97" : "#ddd"), display: "inline-flex", alignItems: "center", gap: 5 }}>
-                    <span className={aperta ? "dot-aperta" : "dot-chiusa"} />
-                    {aperta ? "Aperta ora" : "Chiusa"}
-                  </span>
+                  {mounted && (
+                    <span style={{ fontSize: 12, padding: "4px 12px", borderRadius: 20, background: aperta ? "#EAF3DE" : "#f5f5f5", color: aperta ? "#3B6D11" : "#888", border: "1px solid " + (aperta ? "#C0DD97" : "#ddd"), display: "inline-flex", alignItems: "center", gap: 5 }}>
+                      <span className={aperta ? "dot-aperta" : "dot-chiusa"} />
+                      {aperta ? "Aperta ora" : "Chiusa"}
+                    </span>
+                  )}
                   {farmacia.distributoreH24 && (
                     <span style={{ fontSize: 12, padding: "4px 12px", borderRadius: 20, background: "#EAF3DE", color: "#3B6D11", border: "1px solid #C0DD97", display: "inline-flex", alignItems: "center", gap: 5 }}>
                       <IcoClock /> Distributore H24

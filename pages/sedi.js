@@ -71,7 +71,9 @@ export default function Home() {
   const [cerca, setCerca] = useState("");
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
-  if (!mounted) return null;
+
+  const orarioDi = (f) =>
+    mounted ? getOrarioOggi(f) : (f.orari && f.orari[0] ? f.orari[0][1] : "");
 
   const filtra = (tipo) =>
     farmacie.filter(
@@ -124,7 +126,7 @@ export default function Home() {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 16, marginBottom: 48 }}>
                 {farmacieLista.map((f) => {
                   const badge = badgeProvincia(f.provincia);
-                  const orarioOggi = getOrarioOggi(f);
+                  const orarioOggi = orarioDi(f);
                   return (
                     <div
                       key={f.slug}
@@ -143,10 +145,12 @@ export default function Home() {
                           <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
                           <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
                         </div>
-                        <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 5 }}>
-                          <span className={isAperta(f) ? "dot-aperta" : "dot-chiusa"} />
-                          {isAperta(f) ? "Aperta" : "Chiusa"}
-                        </span>
+                        {mounted && (
+                          <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 5 }}>
+                            <span className={isAperta(f) ? "dot-aperta" : "dot-chiusa"} />
+                            {isAperta(f) ? "Aperta" : "Chiusa"}
+                          </span>
+                        )}
                       </div>
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
                         <IcoPin /><span>{f.indirizzo}</span>
@@ -176,7 +180,7 @@ export default function Home() {
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 16, marginBottom: 48 }}>
                   {parafarmacieLista.map((f) => {
                     const badge = badgeProvincia(f.provincia);
-                    const orarioOggi = getOrarioOggi(f);
+                    const orarioOggi = orarioDi(f);
                     return (
                       <div key={f.slug}>
                         <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>La nostra parafarmacia</div>
@@ -196,9 +200,11 @@ export default function Home() {
                               <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
                               <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
                             </div>
-                            <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap" }}>
-                              {isAperta(f) ? "Aperta" : "Chiusa"}
-                            </span>
+                            {mounted && (
+                              <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: isAperta(f) ? "#EAF3DE" : "#f5f5f5", color: isAperta(f) ? "#3B6D11" : "#888", border: "1px solid " + (isAperta(f) ? "#C0DD97" : "#ddd"), whiteSpace: "nowrap" }}>
+                                {isAperta(f) ? "Aperta" : "Chiusa"}
+                              </span>
+                            )}
                           </div>
                           <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
                             <IcoPin /><span>{f.indirizzo}</span>
