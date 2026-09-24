@@ -1,3 +1,4 @@
+import Head from "next/head";
 import farmacie from "../../farmacie.json";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
@@ -15,7 +16,16 @@ export async function getStaticProps({ params }) {
 }
 
 export default function CosmeticiPage({ farmacia }) {
+  const brand = farmacia.cosmetici.map((c) => c.brand).slice(0, 4).join(", ");
+  const titolo = `Linee cosmetiche - ${farmacia.nome}, ${farmacia.citta} | Gruppo FarmaP`;
+  const descrizione = `Linee cosmetiche e dermatologiche disponibili presso ${farmacia.nome} a ${farmacia.citta}: ${brand} e molti altri brand.`;
+
   return (
+    <>
+    <Head>
+      <title>{titolo}</title>
+      <meta name="description" content={descrizione} />
+    </Head>
     <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
 
@@ -89,5 +99,6 @@ export default function CosmeticiPage({ farmacia }) {
 
       <Footer />
     </div>
+    </>
   );
 }
