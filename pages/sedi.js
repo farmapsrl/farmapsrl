@@ -76,10 +76,10 @@ export default function Home() {
                   const badge = badgeProvincia(f.provincia);
                   const orarioOggi = orarioDi(f);
                   return (
-                    <div
+                    <a
                       key={f.slug}
-                      onClick={() => { window.location.href = "/" + f.slug; }}
-                      style={{ border: "1px solid #eee", borderTop: "3px solid #3B6D11", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}
+                      href={"/" + f.slug}
+                      style={{ display: "block", textDecoration: "none", color: "inherit", border: "1px solid #eee", borderTop: "3px solid #3B6D11", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}
                       onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.15)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
                       onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.05)"; e.currentTarget.style.transform = "translateY(0)"; }}
                     >
@@ -119,7 +119,7 @@ export default function Home() {
                         <span style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500 }}>Scopri i nostri servizi</span>
                         <span style={{ fontSize: 16, color: "#3B6D11" }}>→</span>
                       </div>
-                    </div>
+                    </a>
                   );
                 })}
               </div>
@@ -132,9 +132,9 @@ export default function Home() {
                     return (
                       <div key={f.slug}>
                         <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>La nostra parafarmacia</div>
-                        <div
-                          onClick={() => { window.location.href = "/" + f.slug; }}
-                          style={{ border: "1px solid #eee", borderTop: "3px solid #3B6D11", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "box-shadow 0.2s, transform 0.2s" }}
+                        <a
+                          href={"/" + f.slug}
+                          style={{ display: "block", textDecoration: "none", color: "inherit", border: "1px solid #eee", borderTop: "3px solid #3B6D11", borderRadius: 14, padding: "1.5rem", cursor: "pointer", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "box-shadow 0.2s, transform 0.2s" }}
                           onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.15)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
                           onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.05)"; e.currentTarget.style.transform = "translateY(0)"; }}
                         >
@@ -168,7 +168,7 @@ export default function Home() {
                             <span style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500 }}>Scopri i nostri servizi</span>
                             <span style={{ fontSize: 16, color: "#3B6D11" }}>→</span>
                           </div>
-                        </div>
+                        </a>
                       </div>
                     );
                   })}

@@ -8,6 +8,7 @@ import { categorie, normalizza } from "../data/categorie";
 import icone from "../data/icone";
 import { IcoPin, IcoPhone, IcoClock, IcoMail, IcoChat, IcoX } from "../components/Icone";
 import { isAperta, buildOpeningHours } from "../lib/orari";
+import { SITE_URL } from "../lib/site";
 
 function trackEvent(eventName, params) {
   if (typeof window !== "undefined" && window.gtag) {
@@ -71,7 +72,7 @@ export default function PaginaFarmacia({ farmacia }) {
               },
               "telephone": farmacia.telefono,
               "openingHours": buildOpeningHours(farmacia.orarioApertura),
-              "url": `https://farmapsrl.it/${farmacia.slug}`
+              "url": `${SITE_URL}/${farmacia.slug}`
             })
           }}
         />
