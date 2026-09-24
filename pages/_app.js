@@ -1,5 +1,4 @@
 import { Analytics } from "@vercel/analytics/react";
-import Script from "next/script";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Lexend } from "next/font/google";
@@ -26,10 +25,6 @@ export default function App({ Component, pageProps }) {
       )}
       <Component {...pageProps} />
       <Analytics />
-      <Script
-        src="https://embeds.iubenda.com/widgets/5911346e-57ea-4b41-84fc-510ccd28ac64.js"
-        strategy="lazyOnload"
-      />
     </div>
   );
 }
