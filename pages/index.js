@@ -28,7 +28,7 @@ export default function ChiSiamo() {
         <title>Chi siamo | Gruppo FarmaP</title>
         <meta name="description" content="Il Gruppo FarmaP è una rete di farmacie di prossimità in Emilia-Romagna e Lombardia. Scopri la nostra storia, i nostri valori e le nostre sedi." />
       </Head>
-      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+      <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
       <main>
       <div style={{ background: "#fff", padding: "4rem 2rem" }}>
@@ -38,7 +38,7 @@ export default function ChiSiamo() {
             alt="Gruppo FarmaP"
             style={{ position: "absolute", right: "calc(100% + 48px)", top: "50%", transform: "translateY(-50%)", height: 190, width: "auto" }}
           />
-          <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, margin: 0 }}>
+          <h1 style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, margin: 0 }}>
             La salute<br />vicino a te, ogni giorno.
           </h1>
         </div>
@@ -69,7 +69,7 @@ export default function ChiSiamo() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 32 }}>
             {valori.map((v, i) => (
               <div key={i} style={{ borderTop: "2px solid #3B6D11", paddingTop: 20 }}>
-                <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 28, fontWeight: 400, color: "#1a1a1a", marginBottom: 10 }}>
+                <div style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 28, fontWeight: 400, color: "#1a1a1a", marginBottom: 10 }}>
                   {v.titolo}
                 </div>
                 <p style={{ fontSize: 14, color: "#666", lineHeight: 1.9, margin: 0 }}>
@@ -83,7 +83,7 @@ export default function ChiSiamo() {
 
       <div style={{ padding: "3rem 2rem", background: "#EAF3DE", borderTop: "1px solid #C0DD97" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
-          <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 28, fontWeight: 400, marginBottom: 12, color: "#1f3d08" }}>
+          <div style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 28, fontWeight: 400, marginBottom: 12, color: "#1f3d08" }}>
             Trova la sede più vicina a te
           </div>
           <p style={{ fontSize: 14, color: "#4a6e2a", marginBottom: 24, lineHeight: 1.7 }}>

@@ -82,7 +82,7 @@ export default function Deblistering() {
         <title>Deblistering | Gruppo FarmaP</title>
         <meta name="description" content="Il servizio di deblistering del Gruppo FarmaP organizza i tuoi farmaci in blister settimanali personalizzati, per non dimenticare mai una dose." />
       </Head>
-      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+      <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
       <main>
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "4rem 2rem" }}>
@@ -91,7 +91,7 @@ export default function Deblistering() {
             <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
               Servizio
             </div>
-            <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 20 }}>
+            <h1 style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 20 }}>
               Deblistering
             </h1>
             <p style={{ fontSize: 16, color: "#666", lineHeight: 1.8, maxWidth: 480, margin: 0 }}>
@@ -205,7 +205,7 @@ export default function Deblistering() {
                           width: 36, height: 36, borderRadius: "50%",
                           background: "#3B6D11", color: "#fff",
                           display: "flex", alignItems: "center", justifyContent: "center",
-                          fontFamily: "'Lexend', sans-serif", fontSize: 16, fontWeight: 400, flexShrink: 0,
+                          fontFamily: "var(--font-lexend), sans-serif", fontSize: 16, fontWeight: 400, flexShrink: 0,
                         }}>{step.n}</div>
                         {i < cat.processo.length - 1 && (
                           <div style={{ width: 1, flex: 1, background: "#e0e0e0", margin: "4px 0" }} />
@@ -272,7 +272,7 @@ export default function Deblistering() {
       </div>
       <div style={{ background: "#3B6D11", padding: "3rem 2rem", textAlign: "center" }}>
         <div style={{ maxWidth: 600, margin: "0 auto" }}>
-          <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 24, fontWeight: 400, color: "#fff", marginBottom: 12 }}>
+          <div style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 24, fontWeight: 400, color: "#fff", marginBottom: 12 }}>
             Vuoi attivare il servizio di deblistering?
           </div>
           <p style={{ fontSize: 14, color: "#C0DD97", lineHeight: 1.7, marginBottom: 24 }}>

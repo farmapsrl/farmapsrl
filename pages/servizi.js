@@ -24,7 +24,7 @@ export default function Servizi() {
         <title>Servizi | Gruppo FarmaP</title>
         <meta name="description" content="Scopri tutti i servizi offerti dalle farmacie del Gruppo FarmaP: analisi, esami, vaccinazioni, servizi al cittadino e molto altro." />
       </Head>
-      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+      <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
 
       {modal && (
         <div onClick={() => chiudiModal()} style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.4)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem", boxSizing: "border-box" }}>
@@ -38,7 +38,7 @@ export default function Servizi() {
               </div>
               <div>
                 <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Servizio</div>
-                <h2 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 20, fontWeight: 400, margin: 0 }}>{modal}</h2>
+                <h2 style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 20, fontWeight: 400, margin: 0 }}>{modal}</h2>
               </div>
             </div>
             <div style={{ marginBottom: 24 }}>
@@ -102,7 +102,7 @@ export default function Servizi() {
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "3rem 2rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Gruppo FarmaP</div>
-          <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 16 }}>I nostri servizi</h1>
+          <h1 style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 16 }}>I nostri servizi</h1>
           <p style={{ fontSize: 16, color: "#666", lineHeight: 1.8, maxWidth: 500 }}>
             La farmacia è il primo punto di contatto con il sistema sanitario. Ci impegniamo a rendere accessibili esami, analisi e prestazioni che spesso richiedono lunghe attese o spostamenti — vicino a casa, senza appuntamento.
           </p>

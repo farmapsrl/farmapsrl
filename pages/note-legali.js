@@ -19,7 +19,7 @@ export default function NoteLegali() {
         <title>Note legali | Gruppo FarmaP</title>
         <meta name="description" content="Note legali, dati societari e informazioni sulla proprietà intellettuale del Gruppo FarmaP." />
       </Head>
-      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+      <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
       <main>
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "3rem 2rem" }}>
@@ -30,7 +30,7 @@ export default function NoteLegali() {
           <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
             Gruppo FarmaP
           </div>
-          <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 40, fontWeight: 400, lineHeight: 1.2, marginBottom: 10 }}>
+          <h1 style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 40, fontWeight: 400, lineHeight: 1.2, marginBottom: 10 }}>
             Note legali
           </h1>
         </div>

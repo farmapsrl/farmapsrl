@@ -5,9 +5,6 @@ return (
 <Head>
 <meta name="color-scheme" content="light only" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=optional" />
 <script type="text/javascript" src="https://embeds.iubenda.com/widgets/5911346e-57ea-4b41-84fc-510ccd28ac64.js" />
 <script
   dangerouslySetInnerHTML={{
@@ -35,7 +32,7 @@ return (
 />
 <style dangerouslySetInnerHTML={{__html: `
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #fff; color: #171717; font-family: 'Lexend', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body { background: #fff; color: #171717; font-family: sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
   @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
   .dot-aperta { width: 7px; height: 7px; border-radius: 50%; background: #3B6D11; display: inline-block; flex-shrink: 0; animation: pulse 2s ease-in-out infinite; }
   .dot-chiusa { width: 7px; height: 7px; border-radius: 50%; background: #bbb; display: inline-block; flex-shrink: 0; }

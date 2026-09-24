@@ -39,7 +39,7 @@ export default function Map({ farmacie }) {
       {farmacie.map((f) => (
         <Marker key={f.slug} position={[f.lat, f.lng]} icon={icon}>
           <Popup>
-            <div style={{ fontFamily: "'Lexend', sans-serif", minWidth: 160 }}>
+            <div style={{ fontFamily: "var(--font-lexend), sans-serif", minWidth: 160 }}>
               <div style={{ fontSize: 10, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>FarmaP</div>
               <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 2 }}>{f.nome}</div>
               <div style={{ fontSize: 12, color: "#888", marginBottom: 10 }}>{f.citta}</div>

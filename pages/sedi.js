@@ -4,62 +4,10 @@ import dynamic from "next/dynamic";
 import farmacie from "../farmacie.json";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-
-const IcoPin = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 1 }}>
-    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-  </svg>
-);
-const IcoPhone = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.56-1.56a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-  </svg>
-);
-const IcoClock = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-  </svg>
-);
+import { IcoPin, IcoPhone, IcoClock } from "../components/Icone";
+import { isAperta, getOrarioOggi, orarioStatico } from "../lib/orari";
 
 const Map = dynamic(() => import("../components/Map"), { ssr: false });
-
-function isAperta(farmacia) {
-  const ora = new Date();
-  const giorno = ora.getDay();
-  const minuti = ora.getHours() * 60 + ora.getMinutes();
-  const oa = farmacia.orarioApertura;
-  if (!oa) return false;
-  let schedule = null;
-  if (giorno === 0) schedule = oa.dom || oa.lun_dom || null;
-  else if (giorno === 6) schedule = oa.sab || oa.lun_sab || oa.lun_dom || null;
-  else schedule = oa.lun_ven || oa.lun_sab || oa.lun_dom || null;
-  if (!schedule) return false;
-  const toMin = (t) => {
-    const parti = t.split(":");
-    return parseInt(parti[0]) * 60 + parseInt(parti[1]);
-  };
-  if (schedule.length === 2) return minuti >= toMin(schedule[0]) && minuti < toMin(schedule[1]);
-  if (schedule.length === 4) {
-    return (minuti >= toMin(schedule[0]) && minuti < toMin(schedule[1])) ||
-           (minuti >= toMin(schedule[2]) && minuti < toMin(schedule[3]));
-  }
-  return false;
-}
-
-function getOrarioOggi(f) {
-  const ora = new Date();
-  const giorno = ora.getDay();
-  const oa = f.orarioApertura;
-  if (!oa) return f.orari && f.orari[0] ? f.orari[0][1] : "";
-  let schedule = null;
-  if (giorno === 0) schedule = oa.dom;
-  else if (giorno === 6) schedule = oa.sab || oa.lun_sab || oa.lun_dom;
-  else schedule = oa.lun_ven || oa.lun_sab || oa.lun_dom;
-  if (!schedule) return "Chiusa oggi";
-  if (schedule.length === 2) return `${schedule[0]}–${schedule[1]}`;
-  if (schedule.length === 4) return `${schedule[0]}–${schedule[1]} / ${schedule[2]}–${schedule[3]}`;
-  return f.orari && f.orari[0] ? f.orari[0][1] : "";
-}
 
 function badgeProvincia(provincia) {
   if (provincia === "Milano") return { bg: "#E6F1FB", color: "#0C447C" };
@@ -73,7 +21,7 @@ export default function Home() {
   useEffect(() => { setMounted(true); }, []);
 
   const orarioDi = (f) =>
-    mounted ? getOrarioOggi(f) : (f.orari && f.orari[0] ? f.orari[0][1] : "");
+    mounted ? getOrarioOggi(f) : orarioStatico(f);
 
   const filtra = (tipo) =>
     farmacie.filter(
@@ -95,14 +43,14 @@ export default function Home() {
         <title>Le nostre sedi | Gruppo FarmaP</title>
         <meta name="description" content="Trova la farmacia FarmaP più vicina a te. Orari, servizi e contatti di tutte le nostre sedi in Emilia-Romagna e Lombardia." />
       </Head>
-      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+      <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
 
         <Nav />
         <main>
           <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "3rem 2rem" }}>
             <div style={{ maxWidth: 800, margin: "0 auto" }}>
               <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>Gruppo FarmaP</div>
-              <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 16 }}>La farmacia<br />vicino a te</h1>
+              <h1 style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, marginBottom: 16 }}>La farmacia<br />vicino a te</h1>
               <p style={{ fontSize: 16, color: "#666", lineHeight: 1.7, marginBottom: 32, maxWidth: 500 }}>Trova la sede del gruppo FarmaP più comoda per te. Professionisti al tuo servizio ogni giorno.</p>
               <div style={{ position: "relative", maxWidth: 500 }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}>
@@ -142,7 +90,7 @@ export default function Home() {
                               {f.provincia?.toUpperCase()}
                             </span>
                           </div>
-                          <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
+                          <div style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
                           <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
                         </div>
                         {mounted && (
@@ -153,7 +101,7 @@ export default function Home() {
                         )}
                       </div>
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                        <IcoPin /><span>{f.indirizzo}</span>
+                        <IcoPin style={{ marginTop: 1 }} /><span>{f.indirizzo}</span>
                       </div>
                       <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
                         <IcoPhone /><span>{f.telefono}</span>
@@ -197,7 +145,7 @@ export default function Home() {
                                   {f.provincia?.toUpperCase()}
                                 </span>
                               </div>
-                              <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
+                              <div style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
                               <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
                             </div>
                             {mounted && (
@@ -207,7 +155,7 @@ export default function Home() {
                             )}
                           </div>
                           <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                            <IcoPin /><span>{f.indirizzo}</span>
+                            <IcoPin style={{ marginTop: 1 }} /><span>{f.indirizzo}</span>
                           </div>
                           <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "center", gap: 8 }}>
                             <IcoPhone /><span>{f.telefono}</span>
@@ -232,11 +180,11 @@ export default function Home() {
                         <div style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
                           <div style={{ marginBottom: 14 }}>
                             {f.provincia && (() => { const badge = badgeProvincia(f.provincia); return <div style={{ marginBottom: 6 }}><span style={{ fontSize: 10, background: badge.bg, color: badge.color, padding: "2px 8px", borderRadius: 20, fontWeight: 500 }}>{f.provincia.toUpperCase()}</span></div>; })()}
-                            <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
+                            <div style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
                             <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
                           </div>
                           <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
-                            <IcoPin /><span>{f.indirizzo}</span>
+                            <IcoPin style={{ marginTop: 1 }} /><span>{f.indirizzo}</span>
                           </div>
                           <div style={{ fontSize: 13, color: "#555", marginBottom: 16, display: "flex", flexDirection: "column", gap: 4 }}>
                             {f.orari && f.orari.map(([giorno, ore], i) => (

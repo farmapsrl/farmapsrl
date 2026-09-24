@@ -6,81 +6,13 @@ import Footer from "../components/Footer";
 import descrizioni, { sottoservizi, descrizioniRegionali } from "../data/descrizioni";
 import { categorie, normalizza } from "../data/categorie";
 import icone from "../data/icone";
-
-const IcoPin = ({ size = 14 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-  </svg>
-);
-const IcoPhone = ({ size = 14 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l1.56-1.56a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-  </svg>
-);
-const IcoClock = ({ size = 14 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-  </svg>
-);
-const IcoMail = ({ size = 14 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-  </svg>
-);
-const IcoChat = ({ size = 14 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-  </svg>
-);
-const IcoX = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-  </svg>
-);
+import { IcoPin, IcoPhone, IcoClock, IcoMail, IcoChat, IcoX } from "../components/Icone";
+import { isAperta, buildOpeningHours } from "../lib/orari";
 
 function trackEvent(eventName, params) {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", eventName, params);
   }
-}
-
-function buildOpeningHours(oa) {
-  if (!oa) return [];
-  const dayMap = { lun_ven: "Mo-Fr", lun_sab: "Mo-Sa", lun_dom: "Mo-Su", sab: "Sa", dom: "Su" };
-  const result = [];
-  for (const [key, times] of Object.entries(oa)) {
-    if (!times || !dayMap[key]) continue;
-    const days = dayMap[key];
-    if (times.length === 2) result.push(`${days} ${times[0]}-${times[1]}`);
-    else if (times.length === 4) {
-      result.push(`${days} ${times[0]}-${times[1]}`);
-      result.push(`${days} ${times[2]}-${times[3]}`);
-    }
-  }
-  return result;
-}
-
-function isAperta(farmacia) {
-  const ora = new Date();
-  const giorno = ora.getDay();
-  const minuti = ora.getHours() * 60 + ora.getMinutes();
-  const oa = farmacia.orarioApertura;
-  if (!oa) return false;
-  let schedule = null;
-  if (giorno === 0) schedule = oa.dom || oa.lun_dom || null;
-  else if (giorno === 6) schedule = oa.sab || oa.lun_sab || oa.lun_dom || null;
-  else schedule = oa.lun_ven || oa.lun_sab || oa.lun_dom || null;
-  if (!schedule) return false;
-  const toMin = (t) => {
-    const p = t.split(":");
-    return parseInt(p[0]) * 60 + parseInt(p[1]);
-  };
-  if (schedule.length === 2) return minuti >= toMin(schedule[0]) && minuti < toMin(schedule[1]);
-  if (schedule.length === 4) {
-    return (minuti >= toMin(schedule[0]) && minuti < toMin(schedule[1])) ||
-           (minuti >= toMin(schedule[2]) && minuti < toMin(schedule[3]));
-  }
-  return false;
 }
 
 export async function getStaticPaths() {
@@ -145,7 +77,7 @@ export default function PaginaFarmacia({ farmacia }) {
         />
       </Head>
 
-      <div style={{ fontFamily: "'Lexend', sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
+      <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
 
         {modal && (
           <div onClick={() => chiudiModal()} style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.4)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem", boxSizing: "border-box" }}>
@@ -157,7 +89,7 @@ export default function PaginaFarmacia({ farmacia }) {
                 </div>
                 <div>
                   <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Servizio</div>
-                  <h2 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 20, fontWeight: 400, margin: 0 }}>{modal}</h2>
+                  <h2 style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 20, fontWeight: 400, margin: 0 }}>{modal}</h2>
                 </div>
               </div>
               <div style={{ marginBottom: 24 }}>
@@ -247,7 +179,7 @@ export default function PaginaFarmacia({ farmacia }) {
             <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 48, alignItems: "flex-start", flexWrap: "wrap" }}>
               <div style={{ flex: 1, minWidth: 280 }}>
                 <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>FarmaP · {farmacia.citta}</div>
-                <h1 style={{ fontFamily: "'Lexend', sans-serif", fontSize: 52, fontWeight: 400, marginBottom: 12, lineHeight: 1.1 }}>{farmacia.nome}</h1>
+                <h1 style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 52, fontWeight: 400, marginBottom: 12, lineHeight: 1.1 }}>{farmacia.nome}</h1>
                 <div style={{ display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap", marginBottom: 20 }}>
                   <a href={"https://www.google.com/maps/search/" + encodeURIComponent(farmacia.indirizzo)} target="_blank" rel="noreferrer" style={{ fontSize: 13, color: "#888", textDecoration: "none", display: "flex", alignItems: "center", gap: 5 }}>
                     <IcoPin /> <span style={{ borderBottom: "1px solid #ddd" }}>{farmacia.indirizzo}</span>
@@ -334,7 +266,7 @@ export default function PaginaFarmacia({ farmacia }) {
                 return (
                   <div style={{ marginBottom: 48, padding: "1.5rem", background: "#EAF3DE", border: "1px solid #C0DD97", borderRadius: 14 }}>
                     <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>Gestiamo anche</div>
-                    <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 18, fontWeight: 400, marginBottom: 8, color: "#1a1a1a" }}>{dispensario.nome}</div>
+                    <div style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 18, fontWeight: 400, marginBottom: 8, color: "#1a1a1a" }}>{dispensario.nome}</div>
                     <div style={{ fontSize: 13, color: "#555", marginBottom: 6, display: "flex", alignItems: "flex-start", gap: 8 }}>
                       <IcoPin /><span>{dispensario.indirizzo}</span>
                     </div>
@@ -397,7 +329,7 @@ export default function PaginaFarmacia({ farmacia }) {
               <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 24 }}>
                 <div>
                   <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 8 }}>Lavora con noi</div>
-                  <div style={{ fontFamily: "'Lexend', sans-serif", fontSize: 22, fontWeight: 400, color: "#1a1a1a", marginBottom: 8 }}>Siamo sempre alla ricerca di nuove figure!</div>
+                  <div style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 22, fontWeight: 400, color: "#1a1a1a", marginBottom: 8 }}>Siamo sempre alla ricerca di nuove figure!</div>
                   <p style={{ fontSize: 14, color: "#666", lineHeight: 1.7, margin: 0, maxWidth: 480 }}>
                     Inviaci la tua candidatura e conosciamoci.
                   </p>
