@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
@@ -24,9 +25,9 @@ export default function NoteLegali() {
       <main>
       <div style={{ background: "#fff", borderBottom: "1px solid #eee", padding: "3rem 2rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <a href="/" style={{ fontSize: 13, color: "#3B6D11", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 24 }}>
+          <Link href="/" style={{ fontSize: 13, color: "#3B6D11", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 24 }}>
             ← Torna alla home
-          </a>
+          </Link>
           <div style={{ fontSize: 11, color: "#3B6D11", textTransform: "uppercase", letterSpacing: 2, marginBottom: 12 }}>
             Gruppo FarmaP
           </div>

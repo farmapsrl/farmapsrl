@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer style={{ borderTop: "1px solid #eee", background: "#fff", padding: "2.5rem 2rem", marginTop: "2rem" }}>
@@ -19,7 +21,7 @@ export default function Footer() {
             LinkedIn
           </a>
           <div style={{ display: "flex", gap: 16, fontSize: 11 }}>
-            <a href="/note-legali" style={{ color: "#767676", textDecoration: "none", padding: "10px 4px", minHeight: 44, display: "inline-flex", alignItems: "center" }}>Note legali</a>
+            <Link href="/note-legali" style={{ color: "#767676", textDecoration: "none", padding: "10px 4px", minHeight: 44, display: "inline-flex", alignItems: "center" }}>Note legali</Link>
             <a href="https://www.iubenda.com/privacy-policy/71842433" target="_blank" rel="noreferrer" style={{ color: "#767676", textDecoration: "none", padding: "10px 4px", minHeight: 44, display: "inline-flex", alignItems: "center" }}>Privacy Policy</a>
             <a href="https://www.iubenda.com/privacy-policy/71842433/cookie-policy" target="_blank" rel="noreferrer" style={{ color: "#767676", textDecoration: "none", padding: "10px 4px", minHeight: 44, display: "inline-flex", alignItems: "center" }}>Cookie Policy</a>
           </div>

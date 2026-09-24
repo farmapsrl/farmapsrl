@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import farmacie from "../farmacie.json";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -9,6 +9,7 @@ import icone from "../data/icone";
 import { IcoPin, IcoPhone, IcoClock, IcoMail, IcoChat, IcoX } from "../components/Icone";
 import { isAperta, buildOpeningHours } from "../lib/orari";
 import { SITE_URL } from "../lib/site";
+import useMounted from "../lib/useMounted";
 
 function trackEvent(eventName, params) {
   if (typeof window !== "undefined" && window.gtag) {
@@ -27,11 +28,10 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PaginaFarmacia({ farmacia }) {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const [modal, setModal] = useState(null);
   const [sottoAperto, setSottoAperto] = useState(null);
   const chiudiModal = () => { setModal(null); setSottoAperto(null); };
-  useEffect(() => { setMounted(true); }, []);
 
   const aperta = mounted ? isAperta(farmacia) : false;
   const haServizi = farmacia.servizi && farmacia.servizi.length > 0;

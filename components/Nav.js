@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Nav() {
@@ -42,9 +43,9 @@ export default function Nav() {
         zIndex: 50,
       }}
     >
-      <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+      <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
        <img src="/LogoFarmaP.png" alt="FarmaP" style={{ height: 56, width: "auto" }} />
-      </a>
+      </Link>
       <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
         {navLink("/sedi", "Sedi")}
         {navLink("/servizi", "Servizi")}

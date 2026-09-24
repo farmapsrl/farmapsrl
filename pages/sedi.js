@@ -1,11 +1,12 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import dynamic from "next/dynamic";
 import farmacie from "../farmacie.json";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { IcoPin, IcoPhone, IcoClock } from "../components/Icone";
 import { isAperta, getOrarioOggi, orarioStatico } from "../lib/orari";
+import useMounted from "../lib/useMounted";
 
 const Map = dynamic(() => import("../components/Map"), { ssr: false });
 
@@ -17,8 +18,7 @@ function badgeProvincia(provincia) {
 
 export default function Home() {
   const [cerca, setCerca] = useState("");
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
+  const mounted = useMounted();
 
   const orarioDi = (f) =>
     mounted ? getOrarioOggi(f) : orarioStatico(f);
@@ -177,10 +177,19 @@ export default function Home() {
                     return (
                       <div key={f.slug}>
                         <div style={{ fontSize: 11, color: "#7A9E6A", textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 }}>Il nostro dispensario</div>
-                        <div style={{ border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
+                        <div
+                          style={{ position: "relative", cursor: "pointer", border: "1px solid #eee", borderRadius: 14, padding: "1.5rem", background: "#fff", boxShadow: "0 1px 6px rgba(0,0,0,0.05)", transition: "box-shadow 0.2s, transform 0.2s" }}
+                          onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.15)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 1px 6px rgba(0,0,0,0.05)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                        >
                           <div style={{ marginBottom: 14 }}>
                             {f.provincia && (() => { const badge = badgeProvincia(f.provincia); return <div style={{ marginBottom: 6 }}><span style={{ fontSize: 10, background: badge.bg, color: badge.color, padding: "2px 8px", borderRadius: 20, fontWeight: 500 }}>{f.provincia.toUpperCase()}</span></div>; })()}
-                            <div style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 18, marginBottom: 3 }}>{f.nome}</div>
+                            <div style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 18, marginBottom: 3 }}>
+                              <a href={"/" + f.slug} style={{ color: "inherit", textDecoration: "none" }}>
+                                {f.nome}
+                                <span style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0 }} />
+                              </a>
+                            </div>
                             <div style={{ fontSize: 13, color: "#aaa" }}>{f.citta}</div>
                           </div>
                           <div style={{ fontSize: 13, color: "#555", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
@@ -199,7 +208,7 @@ export default function Home() {
                           {farmaciaRef && (
                             <div style={{ fontSize: 12, color: "#888", borderTop: "1px solid #f0f0f0", paddingTop: 12 }}>
                               Gestito da{" "}
-                              <a href={"/" + farmaciaRef.slug} style={{ color: "#3B6D11", textDecoration: "none", fontWeight: 500 }}>
+                              <a href={"/" + farmaciaRef.slug} style={{ position: "relative", zIndex: 1, color: "#3B6D11", textDecoration: "none", fontWeight: 500 }}>
                                 {farmaciaRef.nome}
                               </a>
                             </div>

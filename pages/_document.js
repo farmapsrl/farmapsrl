@@ -5,6 +5,8 @@ return (
 <Head>
 <meta name="color-scheme" content="light only" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+{/* Volutamente sincrono: deve eseguire prima del consent mode di gtag qui sotto. */}
+{/* eslint-disable-next-line @next/next/no-sync-scripts */}
 <script type="text/javascript" src="https://embeds.iubenda.com/widgets/5911346e-57ea-4b41-84fc-510ccd28ac64.js" />
 <script
   dangerouslySetInnerHTML={{

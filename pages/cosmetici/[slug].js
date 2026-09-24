@@ -91,7 +91,7 @@ export default function CosmeticiPage({ farmacia }) {
           <div style={{ marginTop: 32, background: "#fff", border: "1px solid #eee", borderRadius: 14, padding: "1.5rem 1.75rem", display: "flex", flexDirection: "column", gap: 6 }}>
             <div style={{ fontSize: 13, fontWeight: 600, color: "#222" }}>Molti altri brand disponibili</div>
             <p style={{ fontSize: 14, color: "#666", lineHeight: 1.8, margin: 0 }}>
-              Oltre ai marchi in evidenza, questa sede tratta un'ampia selezione di prodotti cosmetici e dermatologici di altri brand. Se non trovi ciò che cerchi, puoi richiederlo direttamente in farmacia: provvederemo all'ordine nel minor tempo possibile.
+              Oltre ai marchi in evidenza, questa sede tratta un&apos;ampia selezione di prodotti cosmetici e dermatologici di altri brand. Se non trovi ciò che cerchi, puoi richiederlo direttamente in farmacia: provvederemo all&apos;ordine nel minor tempo possibile.
             </p>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
@@ -89,9 +90,9 @@ export default function ChiSiamo() {
           <p style={{ fontSize: 14, color: "#4a6e2a", marginBottom: 24, lineHeight: 1.7 }}>
             Siamo presenti in più province, con orari pensati per adattarsi alle esigenze di ogni giornata.
           </p>
-          <a href="/sedi" style={{ display: "inline-block", padding: "12px 32px", background: "#3B6D11", color: "#fff", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none" }}>
+          <Link href="/sedi" style={{ display: "inline-block", padding: "12px 32px", background: "#3B6D11", color: "#fff", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none" }}>
             Sedi →
-          </a>
+          </Link>
         </div>
       </div>
 
