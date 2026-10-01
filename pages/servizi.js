@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { SITE_URL } from "../lib/site";
 import farmacie from "../farmacie.json";
 import descrizioni, { sottoservizi } from "../data/descrizioni";
 import { categorie, normalizza } from "../data/categorie";
@@ -23,6 +24,7 @@ export default function Servizi() {
       <Head>
         <title>Servizi | Gruppo FarmaP</title>
         <meta name="description" content="Scopri tutti i servizi offerti dalle farmacie del Gruppo FarmaP: analisi, esami, vaccinazioni, servizi al cittadino e molto altro." />
+        <meta property="og:image" content={SITE_URL + "/LogoFarmaP.png"} />
       </Head>
       <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
 
@@ -130,6 +132,8 @@ export default function Servizi() {
                     return (
                       <div
                         key={nome}
+                        role="button"
+                        tabIndex={0}
                         onClick={() => setModal(nome)}
                         style={{ background: "#fff", border: "1px solid #eee", borderRadius: 12, padding: "1rem", cursor: "pointer", display: "flex", alignItems: "center", gap: 12, transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}
                         onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.12)"; e.currentTarget.style.transform = "translateY(-2px)"; }}

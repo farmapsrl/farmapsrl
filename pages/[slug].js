@@ -55,6 +55,7 @@ export default function PaginaFarmacia({ farmacia }) {
         <meta property="og:title" content={titolo} />
         <meta property="og:description" content={descrizione} />
         <meta property="og:type" content="local.business" />
+        <meta property="og:image" content={SITE_URL + "/LogoFarmaP.png"} />
         <meta name="robots" content="index, follow" />
         <script
           type="application/ld+json"
@@ -298,6 +299,8 @@ export default function PaginaFarmacia({ farmacia }) {
                           {serviziFarmacia.map((s, i) => (
                             <div
                               key={i}
+                              role="button"
+                              tabIndex={0}
                               onClick={() => { setModal(s.nome); trackEvent("click_servizio", { farmacia: farmacia.nome, servizio: s.nome }); }}
                               onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.background = "#EEF5E8"; e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(59,109,17,0.1)"; }}
                               onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.background = "#fff"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
