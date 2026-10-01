@@ -1,7 +1,9 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { SITE_URL } from "../lib/site";
 import farmacie from "../farmacie.json";
 
 const sediDeblistering = farmacie.filter((f) =>
@@ -81,6 +83,7 @@ export default function Deblistering() {
       <Head>
         <title>Deblistering | Gruppo FarmaP</title>
         <meta name="description" content="Il servizio di deblistering del Gruppo FarmaP organizza i tuoi farmaci in blister settimanali personalizzati, per non dimenticare mai una dose." />
+        <meta property="og:image" content={SITE_URL + "/LogoFarmaP.png"} />
       </Head>
       <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
@@ -184,9 +187,11 @@ export default function Deblistering() {
 
               {/* Foto */}
               {cat.foto && (
-                <img
+                <Image
                   src={cat.foto}
                   alt={cat.label}
+                  width={800}
+                  height={260}
                   style={{ width: "100%", height: 260, objectFit: "cover", borderRadius: 14, display: "block" }}
                 />
               )}

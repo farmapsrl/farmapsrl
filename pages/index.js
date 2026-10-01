@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { SITE_URL } from "../lib/site";
 
 const valori = [
   {
@@ -28,15 +30,19 @@ export default function ChiSiamo() {
       <Head>
         <title>Chi siamo | Gruppo FarmaP</title>
         <meta name="description" content="Il Gruppo FarmaP è una rete di farmacie di prossimità in Emilia-Romagna e Lombardia. Scopri la nostra storia, i nostri valori e le nostre sedi." />
+        <meta property="og:image" content={SITE_URL + "/LogoFarmaP.png"} />
       </Head>
       <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
       <main>
       <div style={{ background: "#fff", padding: "4rem 2rem" }}>
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative" }}>
-          <img
+          <Image
             src="/LogoFarmaP.png"
             alt="Gruppo FarmaP"
+            width={190}
+            height={190}
+            priority
             style={{ position: "absolute", right: "calc(100% + 48px)", top: "50%", transform: "translateY(-50%)", height: 190, width: "auto" }}
           />
           <h1 style={{ fontFamily: "var(--font-lexend), sans-serif", fontSize: 48, fontWeight: 400, lineHeight: 1.15, margin: 0 }}>

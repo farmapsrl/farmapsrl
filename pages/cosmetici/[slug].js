@@ -1,7 +1,9 @@
 import Head from "next/head";
+import Image from "next/image";
 import farmacie from "../../farmacie.json";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import { SITE_URL } from "../../lib/site";
 
 export async function getStaticPaths() {
   const paths = farmacie
@@ -25,6 +27,7 @@ export default function CosmeticiPage({ farmacia }) {
     <Head>
       <title>{titolo}</title>
       <meta name="description" content={descrizione} />
+      <meta property="og:image" content={SITE_URL + "/LogoFarmaP.png"} />
     </Head>
     <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
@@ -77,10 +80,12 @@ export default function CosmeticiPage({ farmacia }) {
                   boxShadow: "0 1px 6px rgba(0,0,0,0.06)",
                 }}
               >
-                <img
+                <Image
                   src={c.logo}
                   alt={c.brand}
-                  style={{ maxWidth: "100%", maxHeight: 70, objectFit: "contain", transform: `scale(${c.scale || 1})` }}
+                  width={200}
+                  height={70}
+                  style={{ maxWidth: "100%", width: "auto", height: "auto", maxHeight: 70, objectFit: "contain", transform: `scale(${c.scale || 1})` }}
                   onError={(e) => { e.target.style.display = "none"; }}
                 />
                 <span style={{ fontSize: 13, color: "#555", fontWeight: 500, textAlign: "center" }}>{c.brand}</span>

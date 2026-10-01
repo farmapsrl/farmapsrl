@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function Nav() {
@@ -44,7 +45,7 @@ export default function Nav() {
       }}
     >
       <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-       <img src="/LogoFarmaP.png" alt="FarmaP" style={{ height: 56, width: "auto" }} />
+       <Image src="/LogoFarmaP.png" alt="FarmaP" width={56} height={56} priority style={{ height: 56, width: "auto" }} />
       </Link>
       <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
         {navLink("/sedi", "Sedi")}

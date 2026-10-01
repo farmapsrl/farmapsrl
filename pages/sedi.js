@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import farmacie from "../farmacie.json";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { SITE_URL } from "../lib/site";
 import { IcoPin, IcoPhone, IcoClock } from "../components/Icone";
 import { isAperta, getOrarioOggi, orarioStatico } from "../lib/orari";
 import useMounted from "../lib/useMounted";
@@ -42,6 +43,7 @@ export default function Home() {
       <Head>
         <title>Le nostre sedi | Gruppo FarmaP</title>
         <meta name="description" content="Trova la farmacia FarmaP più vicina a te. Orari, servizi e contatti di tutte le nostre sedi in Emilia-Romagna e Lombardia." />
+        <meta property="og:image" content={SITE_URL + "/LogoFarmaP.png"} />
       </Head>
       <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
 

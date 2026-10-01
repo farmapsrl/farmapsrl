@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import { SITE_URL } from "../lib/site";
 
 const voci = [
   { label: "Ragione sociale", valore: "FarmaP Srl" },
@@ -19,6 +20,7 @@ export default function NoteLegali() {
       <Head>
         <title>Note legali | Gruppo FarmaP</title>
         <meta name="description" content="Note legali, dati societari e informazioni sulla proprietà intellettuale del Gruppo FarmaP." />
+        <meta property="og:image" content={SITE_URL + "/LogoFarmaP.png"} />
       </Head>
       <div style={{ fontFamily: "var(--font-lexend), sans-serif", width: "100%", minHeight: "100vh", background: "#f7f7f5" }}>
       <Nav />
