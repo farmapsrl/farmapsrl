@@ -46,6 +46,8 @@ export default function PaginaFarmacia({ farmacia }) {
   const altre = modal
     ? farmacie.filter((f) => f.slug !== farmacia.slug && f.servizi && f.servizi.some((s) => s.nome === modal))
     : [];
+  // "whatsapp": false = WhatsApp non attivo; se assente si usa il telefono (WhatsApp Business su fisso).
+  const haWhatsapp = farmacia.whatsapp !== false;
   const waNumero = (farmacia.whatsapp || farmacia.telefono).replace(/\s+/g, "").replace("+", "");
   const tipo = { parafarmacia: "Parafarmacia", dispensario: "Dispensario" }[farmacia.tipo] || "Farmacia";
 
@@ -169,9 +171,11 @@ export default function PaginaFarmacia({ farmacia }) {
                 <a href={"tel:" + farmacia.telefono} onClick={() => trackEvent("click_chiama", { farmacia: farmacia.nome, posizione: "modal" })} style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500, textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
                   <IcoPhone /> Chiama per informazioni →
                 </a>
-                <a href={"https://wa.me/" + waNumero} onClick={() => trackEvent("click_whatsapp", { farmacia: farmacia.nome, posizione: "modal" })} target="_blank" rel="noreferrer" style={{ fontSize: 13, color: "#25D366", fontWeight: 500, textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
-                  <IcoChat /> Scrivici su WhatsApp →
-                </a>
+                {haWhatsapp && (
+                  <a href={"https://wa.me/" + waNumero} onClick={() => trackEvent("click_whatsapp", { farmacia: farmacia.nome, posizione: "modal" })} target="_blank" rel="noreferrer" style={{ fontSize: 13, color: "#25D366", fontWeight: 500, textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
+                    <IcoChat /> Scrivici su WhatsApp →
+                  </a>
+                )}
                 {farmacia.email && (
                   <a href={"mailto:" + farmacia.email} onClick={() => trackEvent("click_email", { farmacia: farmacia.nome, posizione: "modal" })} style={{ fontSize: 13, color: "#3B6D11", fontWeight: 500, textDecoration: "none", display: "flex", alignItems: "center", gap: 6 }}>
                     <IcoMail /> Scrivici per email →
@@ -212,9 +216,11 @@ export default function PaginaFarmacia({ farmacia }) {
                   <a href={"tel:" + farmacia.telefono} onClick={() => trackEvent("click_chiama", { farmacia: farmacia.nome, posizione: "header" })} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#444", background: "#fff" }}>
                     <IcoPhone size={15} /> Chiama
                   </a>
-                  <a href={"https://wa.me/" + waNumero} onClick={() => trackEvent("click_whatsapp", { farmacia: farmacia.nome, posizione: "header" })} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#444", background: "#fff" }}>
-                    <IcoChat size={15} /> WhatsApp
-                  </a>
+                  {haWhatsapp && (
+                    <a href={"https://wa.me/" + waNumero} onClick={() => trackEvent("click_whatsapp", { farmacia: farmacia.nome, posizione: "header" })} target="_blank" rel="noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#444", background: "#fff" }}>
+                      <IcoChat size={15} /> WhatsApp
+                    </a>
+                  )}
                   {farmacia.email && (
                     <a href={"mailto:" + farmacia.email} onClick={() => trackEvent("click_email", { farmacia: farmacia.nome, posizione: "header" })} style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 20px", border: "1px solid #ddd", borderRadius: 10, fontSize: 14, fontWeight: 500, textDecoration: "none", color: "#444", background: "#fff" }}>
                       <IcoMail size={15} /> Email
