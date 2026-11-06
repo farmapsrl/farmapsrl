@@ -102,7 +102,14 @@
     "lng": 9.1798107,
     "orarioApertura": { "lun_ven": ["08:30", "12:30", "15:30", "19:30"], "sab": ["08:30", "12:30"], "dom": null },
     "orari": [["Lun–Ven", "8:30–12:30 / 15:30–19:30"], ["Sabato", "8:30–12:30"], ["Domenica", "Chiusa"]],
-    "servizi": []
+    "servizi": [
+      { "nome": "Misurazione Pressione Arteriosa" },
+      { "nome": "Holter Cardiaco" },
+      { "nome": "Holter Pressorio" },
+      { "nome": "Profilo Lipidico Completo" },
+      { "nome": "Emoglobina Glicata" },
+      { "nome": "Deblistering Farmaci" }
+    ]
   },
   {
     "slug": "farmacia-amica",
