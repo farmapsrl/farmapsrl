@@ -90,6 +90,21 @@
     ]
   },
   {
+    "slug": "farmacia-san-genesio",
+    "tipo": "farmacia",
+    "nome": "Farmacia San Genesio",
+    "citta": "San Genesio ed Uniti (PV)",
+    "provincia": "Pavia",
+    "regione": "Lombardia",
+    "indirizzo": "Farmacia San Genesio, Via Riviera 10, 27010 San Genesio ed Uniti PV",
+    "telefono": "+39 0382 586155",
+    "lat": 45.2334721,
+    "lng": 9.1798107,
+    "orarioApertura": { "lun_ven": ["08:30", "12:30", "15:30", "19:30"], "sab": ["08:30", "12:30"], "dom": null },
+    "orari": [["Lun–Ven", "8:30–12:30 / 15:30–19:30"], ["Sabato", "8:30–12:30"], ["Domenica", "Chiusa"]],
+    "servizi": []
+  },
+  {
     "slug": "farmacia-amica",
     "tipo": "farmacia",
     "nome": "Farmacia Amica",
@@ -394,21 +409,6 @@
       { "nome": "Attivazione e Assistenza SPID" },
       { "nome": "Deblistering Farmaci" }
     ]
-  },
-  {
-    "slug": "farmacia-san-genesio",
-    "tipo": "farmacia",
-    "nome": "Farmacia San Genesio",
-    "citta": "San Genesio ed Uniti (PV)",
-    "provincia": "Pavia",
-    "regione": "Lombardia",
-    "indirizzo": "Farmacia San Genesio, Via Riviera 10, 27010 San Genesio ed Uniti PV",
-    "telefono": "+39 0382 586155",
-    "lat": 45.2334721,
-    "lng": 9.1798107,
-    "orarioApertura": { "lun_ven": ["08:30", "12:30", "15:30", "19:30"], "sab": ["08:30", "12:30"], "dom": null },
-    "orari": [["Lun–Ven", "8:30–12:30 / 15:30–19:30"], ["Sabato", "8:30–12:30"], ["Domenica", "Chiusa"]],
-    "servizi": []
   },
   {
     "slug": "dispensario-farmap",
