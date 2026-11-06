@@ -41,7 +41,7 @@ const descrizioni = {
 export const descrizioniRegionali = {
   "Screening Colon-Retto": {
     "Lombardia": "Lo screening del colon retto è un esame preventivo fondamentale per la diagnosi precoce del tumore del colon-retto, uno dei più frequenti nella popolazione adulta.\n\nIn Lombardia, i cittadini nelle fasce d'età previste ricevono una lettera di invito dalla Regione. Dopo aver ricevuto la lettera, è possibile ritirare il kit per la raccolta del campione direttamente in farmacia. Il campione viene raccolto a domicilio e riconsegnato in farmacia.\n\nLa diagnosi precoce aumenta significativamente le possibilità di guarigione.",
-    "Emilia-Romagna": "Lo screening del colon retto è un esame preventivo fondamentale per la diagnosi precoce del tumore del colon-retto, uno dei più frequenti nella popolazione adulta.\n\nIn Emilia-Romagna, i cittadini nelle fasce d'età previste dal programma regionale possono ritirare direttamente la provetta in farmacia presentando il proprio codice fiscale, senza attendere alcuna lettera di invito.\n\nLa diagnosi precoce aumenta significativamente le possibilità di guarigione.",
+    "Emilia-Romagna": "Lo screening del colon retto è un esame preventivo fondamentale per la diagnosi precoce del tumore del colon-retto, uno dei più frequenti nella popolazione adulta.\n\nIn Emilia-Romagna, i cittadini nelle fasce d'età previste dal programma regionale possono ritirare direttamente la provetta in farmacia presentando il proprio codice fiscale, senza attendere alcuna lettera di invito. Il campione viene raccolto a domicilio e riconsegnato in farmacia.\n\nLa diagnosi precoce aumenta significativamente le possibilità di guarigione.",
   },
 };
 

@@ -43,6 +43,8 @@ export default function PaginaFarmacia({ farmacia }) {
   const aperta = mounted ? isAperta(farmacia) : false;
   const haServizi = farmacia.servizi && farmacia.servizi.length > 0;
   const servizioCorrente = modal ? farmacia.servizi.find((s) => s.nome === modal) : null;
+  // Se c'è un testo per la regione della farmacia, mostra solo quello al posto dei sottoservizi regionali.
+  const descrizioneRegionale = modal && descrizioniRegionali[modal] ? descrizioniRegionali[modal][farmacia.regione] : null;
   const altre = modal
     ? farmacie.filter((f) => f.slug !== farmacia.slug && f.servizi && f.servizi.some((s) => s.nome === modal))
     : [];
@@ -104,7 +106,7 @@ export default function PaginaFarmacia({ farmacia }) {
                 </div>
               </div>
               <div style={{ marginBottom: 24 }}>
-                {sottoservizi[modal] ? (
+                {sottoservizi[modal] && !descrizioneRegionale ? (
                   <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                     {descrizioni[modal] && (
                       <div style={{ fontSize: 14, color: "#555", lineHeight: 1.8, marginBottom: 12 }}>
@@ -132,7 +134,7 @@ export default function PaginaFarmacia({ farmacia }) {
                   </div>
                 ) : (
                   <div style={{ fontSize: 14, color: "#555", lineHeight: 1.8 }}>
-                    {((descrizioniRegionali[modal] && farmacia.regione && descrizioniRegionali[modal][farmacia.regione]) || descrizioni[modal] || "Contattaci per informazioni dettagliate su questo servizio.").split("\n\n").map((par, i) => (
+                    {(descrizioneRegionale || descrizioni[modal] || "Contattaci per informazioni dettagliate su questo servizio.").split("\n\n").map((par, i) => (
                       <p key={i} style={{ marginBottom: 10 }}>{par}</p>
                     ))}
                     {servizioCorrente?.dettagli && (
