@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { SITE_URL } from "../lib/site";
@@ -13,6 +13,13 @@ export default function Servizi() {
   const [sottoAperto, setSottoAperto] = useState(null);
 
   const chiudiModal = () => { setModal(null); setSottoAperto(null); };
+
+  useEffect(() => {
+    if (!modal) return;
+    const onKey = (e) => { if (e.key === "Escape") { setModal(null); setSottoAperto(null); } };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [modal]);
 
   const farmaciePer = (nomeServizio) =>
     farmacie.filter((f) =>
@@ -30,8 +37,8 @@ export default function Servizi() {
 
       {modal && (
         <div onClick={() => chiudiModal()} style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.4)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem", boxSizing: "border-box" }}>
-          <div onClick={(e) => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: "2rem", maxWidth: 520, width: "100%", position: "relative", maxHeight: "90vh", overflowY: "auto" }}>
-            <button onClick={() => chiudiModal()} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", cursor: "pointer", color: "#aaa", display: "flex", alignItems: "center", padding: 4 }}>
+          <div role="dialog" aria-modal="true" aria-label={modal} onClick={(e) => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: "2rem", maxWidth: 520, width: "100%", position: "relative", maxHeight: "90vh", overflowY: "auto" }}>
+            <button onClick={() => chiudiModal()} aria-label="Chiudi" autoFocus style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", cursor: "pointer", color: "#aaa", display: "flex", alignItems: "center", padding: 4 }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </button>
             <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
@@ -113,9 +120,10 @@ export default function Servizi() {
 
       <div style={{ padding: "2.5rem 2rem" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 16 }}>
-          {categorie.map((cat, catIndex) => {
-            const numSediPerServizio = (nome) =>
-              farmacie.filter((f) => f.servizi.some((s) => normalizza(s.nome) === nome)).length;
+          {categorie
+            .map((cat) => ({ ...cat, servizi: cat.servizi.filter((nome) => farmaciePer(nome).length > 0) }))
+            .filter((cat) => cat.servizi.length > 0)
+            .map((cat, catIndex) => {
             const sfondo = catIndex % 2 === 0 ? "#fff" : "#F4FAF0";
             const bordo = catIndex % 2 === 0 ? "1px solid #eee" : "1px solid #C0DD97";
             return (
@@ -128,13 +136,14 @@ export default function Servizi() {
                 </div>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 10 }}>
                   {cat.servizi.map((nome) => {
-                    const nSedi = numSediPerServizio(nome);
+                    const nSedi = farmaciePer(nome).length;
                     return (
                       <div
                         key={nome}
                         role="button"
                         tabIndex={0}
                         onClick={() => setModal(nome)}
+                        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setModal(nome); } }}
                         style={{ background: "#fff", border: "1px solid #eee", borderRadius: 12, padding: "1rem", cursor: "pointer", display: "flex", alignItems: "center", gap: 12, transition: "border-color 0.2s, box-shadow 0.2s, transform 0.2s" }}
                         onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(59,109,17,0.12)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
                         onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateY(0)"; }}

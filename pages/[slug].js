@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import farmacie from "../farmacie.json";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -33,6 +33,13 @@ export default function PaginaFarmacia({ farmacia }) {
   const [sottoAperto, setSottoAperto] = useState(null);
   const chiudiModal = () => { setModal(null); setSottoAperto(null); };
 
+  useEffect(() => {
+    if (!modal) return;
+    const onKey = (e) => { if (e.key === "Escape") { setModal(null); setSottoAperto(null); } };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [modal]);
+
   const aperta = mounted ? isAperta(farmacia) : false;
   const haServizi = farmacia.servizi && farmacia.servizi.length > 0;
   const servizioCorrente = modal ? farmacia.servizi.find((s) => s.nome === modal) : null;
@@ -40,12 +47,12 @@ export default function PaginaFarmacia({ farmacia }) {
     ? farmacie.filter((f) => f.slug !== farmacia.slug && f.servizi && f.servizi.some((s) => s.nome === modal))
     : [];
   const waNumero = (farmacia.whatsapp || farmacia.telefono).replace(/\s+/g, "").replace("+", "");
-  const nomeServizi = farmacia.servizi && farmacia.servizi.length > 0
-    ? farmacia.servizi.slice(0, 3).map(s => s.nome).join(", ")
-    : "farmaci e prodotti sanitari";
+  const tipo = { parafarmacia: "Parafarmacia", dispensario: "Dispensario" }[farmacia.tipo] || "Farmacia";
 
   const titolo = `${farmacia.nome} - ${farmacia.citta} | Gruppo FarmaP`;
-  const descrizione = `${farmacia.nome} a ${farmacia.citta}. Orari, servizi e contatti. ${nomeServizi} e molto altro. Farmacia di prossimità del Gruppo FarmaP.`;
+  const descrizione = haServizi
+    ? `${farmacia.nome} a ${farmacia.citta}. Orari, servizi e contatti. ${farmacia.servizi.slice(0, 3).map(s => s.nome).join(", ")} e molto altro. ${tipo} di prossimità del Gruppo FarmaP.`
+    : `${farmacia.nome} a ${farmacia.citta}. Orari, contatti e indicazioni. ${tipo} di prossimità del Gruppo FarmaP.`;
 
   return (
     <>
@@ -83,8 +90,8 @@ export default function PaginaFarmacia({ farmacia }) {
 
         {modal && (
           <div onClick={() => chiudiModal()} style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "rgba(0,0,0,0.4)", zIndex: 100, display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem", boxSizing: "border-box" }}>
-            <div onClick={(e) => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: "2rem", maxWidth: 520, width: "100%", position: "relative", maxHeight: "90vh", overflowY: "auto" }}>
-              <button onClick={() => chiudiModal()} style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", cursor: "pointer", color: "#aaa", display: "flex", alignItems: "center", padding: 4 }}><IcoX /></button>
+            <div role="dialog" aria-modal="true" aria-label={modal} onClick={(e) => e.stopPropagation()} style={{ background: "#fff", borderRadius: 16, padding: "2rem", maxWidth: 520, width: "100%", position: "relative", maxHeight: "90vh", overflowY: "auto" }}>
+              <button onClick={() => chiudiModal()} aria-label="Chiudi" autoFocus style={{ position: "absolute", top: 16, right: 16, background: "none", border: "none", cursor: "pointer", color: "#aaa", display: "flex", alignItems: "center", padding: 4 }}><IcoX /></button>
               <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 16 }}>
                 <div style={{ background: "#EAF3DE", borderRadius: 10, padding: 10, flexShrink: 0 }}>
                   {icone[modal] || icone["Misurazione Pressione Arteriosa"]}
@@ -302,6 +309,7 @@ export default function PaginaFarmacia({ farmacia }) {
                               role="button"
                               tabIndex={0}
                               onClick={() => { setModal(s.nome); trackEvent("click_servizio", { farmacia: farmacia.nome, servizio: s.nome }); }}
+                              onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.currentTarget.click(); } }}
                               onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3B6D11"; e.currentTarget.style.background = "#EEF5E8"; e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(59,109,17,0.1)"; }}
                               onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#eee"; e.currentTarget.style.background = "#fff"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
                               style={{ background: "#fff", border: "1px solid #eee", borderRadius: 14, padding: "1.25rem", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", transition: "border-color 0.15s, background 0.15s, transform 0.15s, box-shadow 0.15s" }}

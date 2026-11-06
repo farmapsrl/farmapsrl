@@ -395,7 +395,7 @@
     "cosmetici": [
       { "brand": "L'Erbolario", "logo": "/cosmetici/logo-lerbolario.png" },
       { "brand": "Unifarco", "logo": "/cosmetici/unifarco.png" },
-      { "brand": "Dolomia", "logo": "/cosmetici/Dolomia.png" },
+      { "brand": "Dolomia", "logo": "/cosmetici/dolomia.png" },
       { "brand": "Rougj", "logo": "/cosmetici/rougj.png" }
     ],
     "distributoreH24": false,
@@ -422,7 +422,7 @@
     "lat": 44.8734,
     "lng": 9.4891,
     "farmaciaDiRiferimento": "farmacia-di-nibbiano",
-    "orarioApertura": { "lun_ven": ["08:30", "12:30"] },
+    "orarioApertura": { "lun": ["08:30", "12:30"], "ven": ["08:30", "12:30"] },
     "orari": [["Lunedì e Venerdì", "8:30–12:30"]],
     "notaOrari": "Aperto anche il primo mercoledì del mese dalle 15:00 alle 19:00",
     "social": { "instagram": "" },
